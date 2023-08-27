@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+*{    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+header, footer{
+    height: 5vh;    
+    width: 100vw;
+    background-color: #ccc;  
+          
+}
+
+section{
+    display: flex;
+    flex-direction: row;
+}
+
+main{
+    height: 90vh;    
+    background-color: #999;
+    color: #000;
+    flex: 1;
+}
+
+.texto{
+    float: left;
+    height: 80vh;
+    width: 26vw;
+    background-color: goldenrod; /* Background fictício. No exemplo do Canva está transparente.*/
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+#inicial{ /*Colocado apenas para exemplo visual.*/
+    float: right;
+    height: 200px; /*Altura fictícia.*/
+    width: 400px; /*Largura fictícia.*/
+    margin: 10% 20%;
+    padding: 5px; 
+    border: 5px solid #000;
+    border-radius: 20px;
+}
+
+nav{    
+    margin: 0;      
+    display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
+    align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
+    justify-content: center; /* Alinha os elementos filhos ao centro horizontalmente */  
+}
+
+.logo{    /*Colocado apenas para exemplo visual.*/
+    float: left;
+    margin: 2px 5px;
+    padding: 2px 5px; 
+    border: 2px solid #000;
+    border-radius: 20px; 
+}
+
+nav ul{
+    float: right;
+    list-style: none;
+    margin: 0 10px;
+
+}
+
+nav li{	
+  	display: inline-block;
+    margin: 5px 0;
+    padding: 0 5px; /*Espaçamento entre os ítens do menu*/
+}
+
+.both {
+    display: flex;
+    position: absolute;
+    top: 86vh;
+}
+
+input[type=text] {    
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #000;
+    border-radius: 20px;
+    font-size: 1em;
+    background-color: white;
+    background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    margin-left: 5px;
+    width: 71vw
+}
+
+footer nav{
+    justify-content: flex-end; /* Alinha os elementos filhos ao centro horizontalmente */  
+}
