@@ -130,8 +130,8 @@ input[type=text]:focus {
 h1#d_titulo{    
     text-align: center;
     padding: 10px;
-    color: #fff;
-    text-shadow: 2px 2px 3px black;    
+    color: #000;
+    text-shadow: 1px 1px 3px #fff;    
 }
 
 footer nav{
