@@ -33,6 +33,12 @@ main{
     flex: 1;
 }
 
+aside{
+    display: flex;
+    float: left;
+    width: 30rem;
+}
+
 .texto{
     float: left;
     height: 80vh;
