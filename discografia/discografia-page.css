@@ -1,0 +1,33 @@
+.discografia-header{
+    display: flex;
+    justify-content: end;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+.discografia-container{
+    height: 300px;
+    overflow-y: scroll;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.discografia-footer{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+li {
+    display: inline;
+    text-decoration: none;
+}
