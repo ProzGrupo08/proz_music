@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título do Site</title>
+    <link rel="stylesheet" href="./estilos/style.css"> <!--Avaliar se usaremos style inline ou, como nesse exemplo, chamaremos o style num arquivo externo.-->
+</head>
+<body>
+<header>    
+    <a href="./index.html"><img src="./imgs/logomarca.png" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
+    <nav>        
+        <ul>
+        <li><a href="./index.html">Home</a></li> <!--No caso do menu não, mas avaliar que outros links do corpo do site farão uso do target="_blank" para abrir numa nova aba do browser.-->
+        <li><a href="./biografia.html">Biografia</a></li>
+        <li><a href="./letras.html">Letras</a></li>
+        <li><a href="./discografia.html">Dicografia</a></li>
+        </ul>
+    </nav> <!--Decidir se será acima, abaixo, dentro do <header> ou na lateral do site.-->
+            
+</header>
+
+<section>
+    <main>
+        <div class="texto">
+            <h2>Onde <br> você e a música <br> se encontram</h2>
+            <p><strong>Sprint II - Grupo 8_H</strong>.</p>              
+            <p>------------------------------ <br>
+                <strong>
+                    Deyvid Lins<br>
+                    Eliezer Alves<br>
+                    Oswaldo Ravelo<br>
+                    Vinícius Barbosa de Moraes<br>
+                </strong>
+                ------------------------------ <br>
+            </p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos ex rem voluptates sunt quae iure sed facilis, in fugiat repudiandae minus maiores, tempora harum iusto id omnis. Molestias, reiciendis quas!</p><!--Decidir se este estará dentro de uma <div> ou num <article>, por exemplo.-->
+                      
+        </div>
+        <img src=".imgs/exemplo.jpg" title="Imagem de destaque" alt="Imagem da home"  id="inicial"><!--Imagem de destaque na páginal inicial.-->
+        <div class="both">
+        
+            <form>
+                <input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
+            </form>
+        </div>
+    </main>
+</section>
+<footer>
+    <nav>
+        <ul>
+        <li><a href="#">Política de Privacidade</a></li> <!--Em função da LGPD, avaliar se devemos ou não incluir esses links e seus respectivos conteúdos.-->
+        <li><a href="#">Termos de Uso</a></li> <!--Mesmo caso das Políticas de Privacidade.-->
+        <li><a href="#" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>        
+        </ul>
+    </nav>
+</footer>
+</body>
