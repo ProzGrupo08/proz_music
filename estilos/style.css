@@ -6,14 +6,17 @@
     box-sizing: border-box;
 }
 
-body{
+html{
+	font-size: 62.5%;	
     height: 100vh;
     width: 100vw;
 }
 
+body{    
+}
+
 header, footer{
-    height: 5vh;    
-    width: 100vw;
+    height: 5vh;        
     background-color: #ccc;  
           
 }
@@ -35,24 +38,26 @@ main{
     height: 80vh;
     width: 26vw;
     background-color: goldenrod; /* Background fictício. No exemplo do Canva está transparente.*/
-    margin: 5px;
-    padding: 5px;
-    border-radius: 20px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 2rem;
     line-height:1.5;
 	text-align: justify;
+    font-size: 1.6rem;
 }
 
 #inicial{ /*Colocado apenas para exemplo visual.*/
     float: right;
-    height: 200px; /*Altura fictícia.*/
-    width: 400px; /*Largura fictícia.*/
+    height: 20rem; /*Altura fictícia.*/
+    width: 40rem; /*Largura fictícia.*/
     margin: 10% 20%;
-    padding: 5px; 
-    border: 5px solid #000;
-    border-radius: 20px;
+    padding: 0.5rem; 
+    border: 0.5rem solid #000;
+    border-radius: 2rem;
 }
 
 nav{    
+    font-size: 1.8rem;
     margin: 0;      
     display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
     align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
@@ -61,23 +66,23 @@ nav{
 
 .logo{    /*Colocado apenas para exemplo visual.*/
     float: left;
-    margin: 2px 5px;
-    padding: 2px 5px; 
-    border: 2px solid #000;
-    border-radius: 20px; 
+    margin: 0.2rem 0.5rem;
+    padding: 0.2rem 0.5rem; 
+    border: 0.2rem solid #000;
+    border-radius: 2rem; 
 }
 
 nav ul{
     float: right;
     list-style: none;
-    margin: 0 10px;
+    margin: 0 1rem;
 
 }
 
 nav li{	
   	display: inline-block;
-    margin: 5px 0;
-    padding: 0 5px; /*Espaçamento entre os ítens do menu*/
+    margin: 0.5rem 0;
+    padding: 0 0.5rem; /*Espaçamento entre os ítens do menu*/
 }
 
 .both {
@@ -87,51 +92,66 @@ nav li{
 }
 
 input[type=text] {    
-    width: 130px;
+    width: 13rem;
     box-sizing: border-box;
-    border: 2px solid #000;
-    border-radius: 20px;
-    font-size: 1em;
+    border: 0.2rem solid #000;
+    border-radius: 2rem;
+    font-size: 1.6rem;
     background-color: white;
     background-image: url('https://www.w3schools.com/howto/searchicon.png');
-    background-position: 10px 10px; 
+    background-position: 1rem 1rem; 
     background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
+    padding: 1.2rem 2rem 1.2rem 4rem;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 
 input[type=text]:focus {
-    margin-left: 5px;
+    margin-left: 0.5rem;
     width: 71vw
 }
 
-.discografia {
-    margin: auto;    
-    max-width: 1000px;
+.discografia {    
+    margin: auto;
+    max-width: 75vw;
+    height: 81vh;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 13px;
     justify-content: center;
     padding: 13px;
-    box-shadow: 0 0 2px 2px rgb(0, 0, 0);
-    border-radius: 13px; 
+    box-shadow: 0 0 0.3rem 0.3rem rgb(0, 0, 0);
+    border-radius: 2rem;     
+    text-align: center;  
 
 }
 
-.discos {
-    background: goldenrod;
+.discos { 
+    height: 85%;        
+    background-color: goldenrod;               
+    align-items: center;
     color: #000;
-    padding: 8px 8px 50px;
-    box-shadow: 0 0 2px 2px rgb(99, 98, 98);   
-    border-radius: 13px;     
+    padding: 0.8rem 0.8rem 5rem;
+    border-radius: 2rem; 
+    box-shadow: 0 0 0.3rem 0.3rem rgb(99, 98, 98); 
+    
+     
+}
+
+.discos img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;  
+    padding: 1rem;
+    border-radius: 2rem;
 }
 
 h1#d_titulo{    
+    font-size: 2.5rem;
     text-align: center;
-    padding: 10px;
+    padding: 1rem;
     color: #000;
-    text-shadow: 1px 1px 3px #fff;    
+    text-shadow: 0.1rem 0.1rem 0.3rem #fff;    
 }
 
 footer nav{

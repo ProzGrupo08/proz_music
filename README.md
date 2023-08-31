@@ -6,5 +6,5 @@ Tive que mandar para cá logo, pois minha máquina está **apresentando problema
 
 ____________________________________________
 Os arquivos estão comentados e com muita coisa para corrigir ainda.
-É isso é, qualquer coisa, me xinga lá no zap.
+É isso é, qualquer coisa, me avisa lá no zap.
 Blz?
