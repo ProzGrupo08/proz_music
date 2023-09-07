@@ -98,11 +98,11 @@ nav li{
 }
 
 input[type=text] {    
-    width: 13rem;
+    width: 13rem; //Define a Largura
     box-sizing: border-box;
     border: 0.2rem solid #000;
     border-radius: 2rem;
-    font-size: 1.6rem;
+    font-size: 1.6rem; //Define a altura
     background-color: white;
     background-image: url('https://www.w3schools.com/howto/searchicon.png');
     background-position: 1rem 1rem; 
