@@ -3,51 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Letras</title>
-    <link rel="stylesheet" href="./estilos/style.css"> <!--Avaliar se usaremos style inline ou, como nesse exemplo, chamaremos o style num arquivo externo.-->
+    <link rel="stylesheet" href="/assents/style/style.css">
+    <script src="/assents/script/script.js" defer></script>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');</style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Letras</title>  
+
 </head>
-<body>
-<header>    
-    <a href="./index.html"><img src="./imgs/logomarca.png" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
-    <nav>        
-        <ul>
-        <li><a href="./index.html">Home</a></li> <!--No caso do menu não, mas avaliar que outros links do corpo do site farão uso do target="_blank" para abrir numa nova aba do browser.-->
-        <li><a href="./biografia.html">Biografia</a></li>
-        <li><a href="./letras.html">Letras</a></li>
-        <li><a href="./discografia.html">Discografia</a></li>
-        </ul>
-    </nav> <!--Decidir se será acima, abaixo, dentro do <header> ou na lateral do site.-->
-            
-</header>
+<body class="gradiente">
+    <header>    
+        <a href="./index.html"><img src="./assents/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
+        <nav>        
+            <ul>
+            <li><a href="./index.html">Home</a></li> <!--No caso do menu não, mas avaliar que outros links do corpo do site farão uso do target="_blank" para abrir numa nova aba do browser.-->
+            <li><a href="./biografia.html">Biografia</a></li>
+            <li><a href="./letras.html">Letras</a></li>
+            <li><a href="./discografia.html">Discografia</a></li>
+            </ul>
+        </nav> 
+    </header>
+	<main>
+        <h1>Buscador de Letras de Músicas</h1>
 
-<section>
-    <main>
-        <div class="texto">
-            <p>Texto de exemplo.</p><!--Decidir se este estará dentro de uma <div> ou num <article>, por exemplo.-->
-                <p><strong>Sprint II - Grupo 8_H</strong>.</p>              
-                <p>------------------------------ <br>
-                    <strong>
-                        Deyvid Lins<br>
-                        Eliezer Alves<br>
-                        Oswaldo Ravelo<br>
-                        Vinícius Barbosa de Moraes<br>
-                    </strong>
-                    ------------------------------ <br>
-                </p>           
+        <!-- Campo de pesquisa para o nome do artista -->
+        <label for="artista">Nome do Artista:</label>
+        <input type="text" id="artista" placeholder="Nome do artista">
+    
+        <!-- Campo de pesquisa para o nome da música -->
+        <label for="musica">Nome da Música:</label>
+        <input type="text" id="musica" placeholder="Nome da música">
+    
+        <!-- Botão para buscar a letra da música -->
+        <button id="buscar">Buscar Letra</button>
+    
+        <!-- Resultado da pesquisa -->
+        <div id="resultado">
+            <!-- O conteúdo da letra da música será exibido aqui -->
         </div>
-
-        <img src=".imgs/exemplo.jpg" title="Imagem de destaque" alt="Imagem da home"  id="inicial"><!--Imagem de destaque na páginal inicial.-->
-    </main>
-</section>
-<footer>
-    <nav>
-        <ul>        
-        <li><a href="#">Contato</a></li>
-        <li><a href="#">Facebook</a></li>
-        <li><a href="#">Instagram</a></li>
-        <li><a href="#">E-mail</a></li> <!--Avaliar se a opção contato já não deveria exibir esse e-mail ou se realmente se deseja que esteja em separado.-->                
-        <li><a href="#" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>                
+    
+        <!-- Resultado do vídeo -->
+        <div id="video">
+            <!-- O vídeo relacionado será exibido aqui -->
+        </div>
+	</main>
+	<footer>
+        <ul>
+            <li><a href="#">CONTATO</a></li>
+            <li><a href="#">FACEBOOK</a></li>
+            <li><a href="#">INSTAGRAM</a></li>
+            <li><a href="#">EMAIL</a></li>
         </ul>
-    </nav>
-</footer>
+    </footer>
 </body>
+</html>
