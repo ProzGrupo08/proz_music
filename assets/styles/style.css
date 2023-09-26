@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 *{    
     margin: 0;
@@ -6,60 +7,95 @@
     box-sizing: border-box;
 }
 
-html{
+html, body{
 	font-size: 62.5%;	
-    height: 100%;
-    width: 100%;
+	height: 100%;
+	width: 100%; 	
 }
 
-body{    
+body.gradiente {    
+    display: block;
+    align-items: center;
+    justify-content: center;    
+    width: 98vw;  
+    background: linear-gradient(45deg,#621643,#b054c2);
+    background-size: 300% 300%;
+    animation: gradient-animation 13s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+header{
+    display: flex;
+    justify-content: space-between;  
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+              
+    }
+
+header > a > img{
+    height: 13rem;
 }
 
-header, footer{
-    height: 5vh;        
-    background-color: #ccc;  
+
+footer{
+    height: 5vh;             
           
 }
 
 section{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 main{    
-    height: 90vh;    
-    background-color: #999;
+	display:flex;
+    justify-content: center;
+    height: 71vh;     
     color: #000;
     flex: 1;
 }
 
-aside{
-    display: flex;
-    float: left;
-    width: 30rem;
-}
-
 .texto{
+	display: flex;
+    justify-content: space-evenly;
     float: left;
-    height: 80vh;
-    width: 26vw;
-    background-color: goldenrod; /* Background fictício. No exemplo do Canva está transparente.*/
+    height: 68vh;
+    width: 90vw;
+    color: #fff;    
+    background-color: transparent; /* Background fictício. No exemplo do Canva está transparente.*/
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 2rem;
     line-height:1.5;
 	text-align: justify;
-    font-size: 1.6rem;
+    font-size: 2.6rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #inicial{ /*Colocado apenas para exemplo visual.*/
     float: right;
-    height: 20rem; /*Altura fictícia.*/
-    width: 40rem; /*Largura fictícia.*/
-    margin: 10% 20%;
-    padding: 0.5rem; 
-    border: 0.5rem solid #000;
-    border-radius: 2rem;
+    height: 35rem; /*Altura fictícia.*/
+    width: 53rem; /*Largura fictícia.*/
+    margin-top: 0.5rem;    
+    border: none;
+ 
+}
+
+.logo{    /*Colocado apenas para exemplo visual.*/
+    float: left;
+    margin: 0.2rem 0.5rem;    
 }
 
 nav{    
@@ -70,25 +106,19 @@ nav{
     justify-content: center; /* Alinha os elementos filhos ao centro horizontalmente */  
 }
 
-.logo{    /*Colocado apenas para exemplo visual.*/
-    float: left;
-    margin: 0.2rem 0.5rem;
-    padding: 0.2rem 0.5rem; 
-    border: 0.2rem solid #000;
-    border-radius: 2rem; 
-}
+nav ul li{	    
+    display: inline-block;
+        
+}    
 
-nav ul{
-    float: right;
-    list-style: none;
-    margin: 0 1rem;
+nav li a{
+    color: #fff;
+    text-decoration: none;    
+}    
 
-}
-
-nav li{	
-  	display: inline-block;
-    margin: 0.5rem 0;
-    padding: 0 0.5rem; /*Espaçamento entre os ítens do menu*/
+nav li a:hover{
+    text-decoration: underline;
+    font-weight: bolder;
 }
 
 .both {
@@ -96,6 +126,7 @@ nav li{
     position: absolute;
     top: 86vh;
 }
+
 
 input[type=text] {    
     width: 13rem;
@@ -110,6 +141,7 @@ input[type=text] {
     padding: 1.2rem 2rem 1.2rem 4rem;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
+    margin-left: 1.3rem;
 }
 
 input[type=text]:focus {
@@ -160,6 +192,9 @@ h1#d_titulo{
     text-shadow: 0.1rem 0.1rem 0.3rem #fff;    
 }
 
-footer nav{
-    justify-content: flex-end; /* Alinha os elementos filhos ao centro horizontalmente */  
+footer{    
+	display: flex;
+    justify-content: end;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
 }

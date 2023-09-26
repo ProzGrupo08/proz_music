@@ -1,58 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Título do Site</title>
-    <link rel="stylesheet" href="./estilos/style.css"> <!--Avaliar se usaremos style inline ou, como nesse exemplo, chamaremos o style num arquivo externo.-->
-</head>
-<body>
-<header>    
-    <a href="./index.html"><img src="./imgs/logomarca.png" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
-    <nav>        
-        <ul>
-        <li><a href="./index.html">Home</a></li> <!--No caso do menu não, mas avaliar que outros links do corpo do site farão uso do target="_blank" para abrir numa nova aba do browser.-->
-        <li><a href="./biografia.html">Biografia</a></li>
-        <li><a href="./letras.html">Letras</a></li>
-        <li><a href="./discografia.html">Discografia</a></li>
-        </ul>
-    </nav> <!--Decidir se será acima, abaixo, dentro do <header> ou na lateral do site.-->
-            
-</header>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Display Grid</title>
+<style>
+	/* Quando se utiliza o grid-auto-rows ou grid-auto-columns, NÃO se pode trabalhar com números negativos */
 
-<section>
-    <main>
-        <div class="texto">
-            <h2>Onde <br> você e a música <br> se encontram</h2>
-            <p><strong>Sprint II - Grupo 8_H</strong>.</p>              
-            <p>------------------------------ <br>
-                <strong>
-                    Deyvid Lins<br>
-                    Eliezer Alves<br>
-                    Oswaldo Ravelo<br>
-                    Vinícius Barbosa de Moraes<br>
-                </strong>
-                ------------------------------ <br>
-            </p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos ex rem voluptates sunt quae iure sed facilis, in fugiat repudiandae minus maiores, tempora harum iusto id omnis. Molestias, reiciendis quas!</p><!--Decidir se este estará dentro de uma <div> ou num <article>, por exemplo.-->
-                      
-        </div>
-        <img src=".imgs/exemplo.jpg" title="Imagem de destaque" alt="Imagem da home"  id="inicial"><!--Imagem de destaque na páginal inicial.-->
-        <div class="both">
+	@charset "UTF-8";
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+	html {
+		font-size: 62.5%;
+		height: 90%;
+		
+	}
+
+	body{    
+		font-family: "Montserrat";
+		font-size: clamp(1.3rem, 2vw, 2.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		color: #fff;
+		margin: auto;
+	}
+
+	body.gradiente {    
+		display: block;
+		align-items: center;
+		justify-content: center;    
+		width: 98vw;  
+		background: linear-gradient(45deg,#b054c2,#621643);
+		background-size: 300% 300%;
+		animation: gradient-animation 8s ease infinite;
+	}
+			
+	@keyframes gradient-animation {
+		0% {
+		background-position: 0% 50%;
+		}
+		50% {
+		background-position: 100% 50%;
+		}
+		100% {
+		background-position: 0% 50%;
+		}
+	}
+
+	.container>* {
+		/* min-height: 10rem;
+		border-radius: 0.4rem; */		
+		display: flex;
+		align-items: center;			
+	}
+
+	.container {
+		display: grid;
+		grid-template-rows: repeat(7, auto);
+		grid-template-columns: repeat(2, auto);
+		gap: 1rem;
+	}
+
+	header {		
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-start;
+		font-family: 'Montserrat', sans-serif;
+		color: #fff;		
+	}
+
+	header > a > img{
+		height: 13rem;
+	}
+
+
+	footer{
+		height: 2vh;             
+			
+	}
+
+	nav{    
+		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		margin: 0;      
+		display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
+		align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
+		justify-content: center; /* Alinha os elementos filhos ao centro horizontalmente */  
+}
+
+	nav ul li{	    
+		display: inline-block;
+			
+	}    
+
+	nav li a{
+		color: #fff;
+		text-decoration: none;    
+	}    
+
+	nav li a:hover{
+		text-decoration: underline;
+		font-weight: bolder;
+	}
+
+	#inicial{ /*Colocado apenas para exemplo visual.*/
+		float: right;
+		/* width: 50vw; */ /*Largura fictícia.*/
+		grid-column: -2/-1;
+		grid-row: 2/3;  
+		border: none;	
         
-            <form>
-                <input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
-            </form>
-        </div>
-    </main>
-</section>
-<footer>
-    <nav>
-        <ul>
-        <li><a href="#">Política de Privacidade</a></li> <!--Em função da LGPD, avaliar se devemos ou não incluir esses links e seus respectivos conteúdos.-->
-        <li><a href="#">Termos de Uso</a></li> <!--Mesmo caso das Políticas de Privacidade.-->
-        <li><a href="#" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>        
-        </ul>
-    </nav>
-</footer>
+    }
+
+	.logo{    /*Colocado apenas para exemplo visual.*/
+		float: left;
+		grid-column: 1;
+		grid-row: 1;
+		margin: 0.5rem 0.5rem;    
+	}
+
+
+
+	main>*{
+		padding: 0.5rem;
+	}
+
+	main {
+		margin: auto;
+	}
+
+	footer {
+		grid-column: 1/-1;
+		grid-row: -2/-1;	
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;		
+		font-family: 'Montserrat', sans-serif;
+		color: #fff;		
+	}
+
+	.texto{
+		display: grid;
+		grid-template-rows: repeat(3, auto); 
+		grid-template-columns: 1.5fr 1fr 0.5fr;
+		gap: 1rem;
+		justify-content: space-evenly;
+		align-items: start;
+		float: left;
+		max-height: 53vh; 
+		color: #fff;    
+		background-color: transparent; /* Background fictício. No exemplo do Canva está transparente.*/
+		margin: 0.5rem auto;
+		padding: 0.5rem;
+		border-radius: 2rem;
+		line-height:1.5;
+		text-align: left;		
+		font-family: 'Montserrat', sans-serif;
+	}
+	
+	h2>p{
+		border-top: 0.2rem solid #fff;
+		border-bottom: 0.2rem solid #fff;
+		margin: 0.5rem 0;		
+		padding: 0.5rem 0;
+	}
+
+	#asterisco{		
+		float: right;		
+		font-size: clamp(3rem, 6.4vw, 7.1rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		color: #D1328E;
+		text-shadow: 0.1rem 0.1rem 0.2rem #fff;		
+	}
+	
+	#texto-inicial{
+		text-shadow: 0.1rem 0.1rem 0.2rem #000;
+		font-weight: bolder;		
+	}
+
+	.texto > h2{
+		font-size: clamp(2rem, 3vw, 5.3rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+	}
+
+	.texto > p{
+		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		margin-left: 2rem;
+	}
+	
+	#p-inicial{
+		text-align: justify;
+	}
+	
+	.destacado{
+		color: #D1328E;
+		text-shadow: 0.1rem 0.1rem 0.2rem #fff;
+	}
+
+	.both {
+		display: flex;
+		position: absolute;
+		top: 86vh;
+	}
+
+
+	input[type=text] {    
+		width: 13rem;
+		box-sizing: border-box;
+		border: 0.2rem solid #000;
+		border-radius: 2rem;
+		font-size: clamp(1rem, 1.3vw, 1.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		background-color: white;
+		background-image: url('https://www.w3schools.com/howto/searchicon.png');
+		background-position: 1rem 1rem; 
+		background-repeat: no-repeat;
+		padding: 1.2rem 2rem 1.2rem 4rem;
+		-webkit-transition: width 0.4s ease-in-out;
+		transition: width 0.4s ease-in-out;
+		margin-left: 1.3rem;
+	}
+
+	input[type=text]:focus {
+		margin-left: 0.5rem;
+		width: 71vw
+	}	
+</style>
+</head>
+<body class="gradiente">
+      <header>
+		<a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
+		<nav>        
+			<ul>
+			<li><a href="./index.html">Home</a></li> <!--No caso do menu não, mas avaliar que outros links do corpo do site farão uso do target="_blank" para abrir numa nova aba do browser.-->
+			<li><a href="./biografia.html">Biografia</a></li>
+			<li><a href="./letras.html">Letras</a></li>
+			<li><a href="./discografia.html">Discografia</a></li>
+			</ul>
+		</nav> <!--Decidir se será acima, abaixo, dentro do <header> ou na lateral do site.-->                   
+	  </header>
+    <div class="container">	
+      <main>      
+        <div class="texto">
+            <h2 id="texto-inicial">Onde <span id="asterisco">*</span><p> <span class="destacado">você</span> e a <span class="destacado">música</span> </p> <i><span class="destacado">se</span> encontram</i></h2>       
+            <p id="p-inicial">Aqui você encontra seu artista, banda, disco ou música favorita,além de informações variadas sobre temas ligados a música.</p>              
+        </div>                              
+		<img src="./assets/imgs/women_sounds.png" title="Imagem de destaque" alt="Imagem da home"  id="inicial"><!--Imagem de destaque na páginal inicial.-->  
+       </main>
+	   <div class="both">
+        
+		<form>
+			<input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
+		</form>
+	</div>	   
+  
+  </div>   
+  	   <footer>
+		<nav>
+			<ul>        
+			<li><a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>        
+			</ul>
+		</nav>
+		</footer>
 </body>
+</html>
