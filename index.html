@@ -49,7 +49,7 @@
 	.container>* {
 		/* min-height: 10rem;
 		border-radius: 0.4rem; */		
-		display: flex;
+		display: flex; /* Preciso alterar o display nas media-queries*/
 		align-items: center;			
 	}
 
@@ -70,7 +70,9 @@
 	}
 
 	header > a > img{
-		height: 13rem;
+		height: 19vh; /*Utilizar como unidade de medida o (vh) para height ou (vw) para o width. Como uma se ajusta automaticamente a outra, definir APENAS UMA delas. Isso evita distorcer a imagem.*/
+		object-fit: cover; /*Lembrar de utilizar as especificações OBJECT-FIT e OBJECT-POSITION em todas as imagens*/
+  		object-position: left top;
 	}
 
 
@@ -81,10 +83,10 @@
 
 	nav{    
 		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
-		margin: 0;      
+		margin: 0 0.5rem 0 0; /*Atentar em especificar a margem lateral, para não colar no canto da tela*/
 		display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
 		align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
-		justify-content: center; /* Alinha os elementos filhos ao centro horizontalmente */  
+		justify-content: right; /* Alinha os elementos filhos ao centro horizontalmente */  
 }
 
 	nav ul li{	    
@@ -103,12 +105,14 @@
 	}
 
 	#inicial{ /*Colocado apenas para exemplo visual.*/
-		float: right;
-		/* width: 50vw; */ /*Largura fictícia.*/
+		float: right;		
+		margin: 0 1rem 0 0;
 		grid-column: -2/-1;
 		grid-row: 2/3;  
 		border: none;	
-        
+		height: 54.7vh; /*Utilizar como unidade de medida o (vh) para height ou (vw) para o width. Como uma se ajusta automaticamente a outra, definir APENAS UMA delas. Isso evita distorcer a imagem.*/
+        object-fit: cover;
+  		object-position: center; /* O center defini automaticamente 50% no topo e 50% na direita. Apenas lembrar que o position pode ser definido em cada direção na ordem (topo, direita, baixo, esquerda). Ex.: (object-position: top 0 right 10px;)*/
     }
 
 	.logo{    /*Colocado apenas para exemplo visual.*/
@@ -125,7 +129,7 @@
 	}
 
 	main {
-		margin: auto;
+		margin: auto;		
 	}
 
 	footer {
