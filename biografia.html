@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biografia</title>
+    <title>Proz Music - Biografia</title>
     <style>
-        @charset "UTF-8";
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-    
-    *{    
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    html, body{
-        font-size: 62.5%;	
-        height: 100%;
-        width: 100%; 	
-    }
+	/* Quando se utiliza o grid-auto-rows ou grid-auto-columns, NÃO se pode trabalhar com números negativos */
+
+	@charset "UTF-8";
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+	html {
+		font-size: 62.5%;
+		height: 90%;
+		
+	}
+
+	body{    
+		font-family: "Montserrat";
+		font-size: clamp(1.3rem, 2vw, 2.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		color: #fff;
+		margin: auto;
+	}
     
     body.gradiente {    
         display: block;
@@ -122,18 +126,20 @@
      
     }
     
-    .logo{    /*Colocado apenas para exemplo visual.*/
-        float: left;
-        margin: 0.2rem 0.5rem;    
-    }
+	.logo{    /*Colocado apenas para exemplo visual.*/
+		float: left;
+		grid-column: 1;
+		grid-row: 1;
+		margin: 0.5rem 0.5rem;    
+	}
     
-    nav{    
-        font-size: 1.8rem;
-        margin: 0;      
-        display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
-        align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
-        justify-content: center; /* Alinha os elementos filhos ao centro horizontalmente */  
-    }
+	nav{    
+		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		margin: 0 0.5rem 0 0; /*Atentar em especificar a margem lateral, para não colar no canto da tela*/
+		display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
+		align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
+		justify-content: right; /* Alinha os elementos filhos ao centro horizontalmente */  
+}
     
     nav ul li{	    
         display: inline-block;
@@ -153,7 +159,7 @@
     .both {
         display: flex;
         position: absolute;
-        top: 86vh;
+        top: 85vh;
     }
     
     
@@ -162,7 +168,7 @@
         box-sizing: border-box;
         border: 0.2rem solid #000;
         border-radius: 2rem;
-        font-size: 1.6rem;
+		font-size: clamp(1rem, 1.3vw, 1.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
         background-color: white;
         background-image: url('https://www.w3schools.com/howto/searchicon.png');
         background-position: 1rem 1rem; 
@@ -223,11 +229,17 @@
                
     </main>
 </section>
-<footer>
-    <nav>
-        <ul>        
-        <li><a href="#" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>        
-        </ul>
-    </nav>
-</footer>
+	   <div class="both">
+        
+		<form>
+			<input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
+		</form>
+	</div>	
+  	<footer>
+	<nav>
+		<ul>        
+		<li><a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>        
+		</ul>
+	</nav>
+	</footer>
 </body>
