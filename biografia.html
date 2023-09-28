@@ -114,14 +114,7 @@
         font-size: 1.7rem;
     }
     
-    #inicial{ /*Colocado apenas para exemplo visual.*/
-        float: right;
-        /* width: 50vw; */ /*Largura fictícia.*/
-        margin-top: 0.5rem;    
-        border: none;
-     
-    }
-    
+   
     .logo{    /*Colocado apenas para exemplo visual.*/
         float: left;
         margin: 0.2rem 0.5rem;    
@@ -192,7 +185,44 @@
         font-family: 'Montserrat', sans-serif;
         color: #fff;
     }
+
+    #capaAllOfMe {
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 45%;
+        right: 87%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
     
+    #botao-play {
+        height: 50px;
+        width: 60px;
+        position: absolute;
+        top: 45%;
+        right: 90%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        
+    }
+    
+    
+    footer #footer li {
+        display: inline-block;
+        list-style-type: none;
+        padding: 0 20px;
+    }
+
+    footer #footer li a {
+        text-decoration: none;
+        color: #fff;
+        background-color: #ED3A85;
+        background-image: linear-gradient(43deg, #ED3A85 0%, #B054C2 46%, #000 100%);
+        padding: 15px 50px;
+        border-radius: 5%;
+    }
+
         </style>
 </head>
 <body class="gradiente">
@@ -201,10 +231,10 @@
     <a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
     <nav>        
         <ul>
-        <li><a href="./index.html">Home</a></li> <!--No caso do menu não, mas avaliar que outros links do corpo do site farão uso do target="_blank" para abrir numa nova aba do browser.-->
-        <li><a href="./biografia.html">Biografia</a></li>
-        <li><a href="./letras.html">Letras</a></li>
-        <li><a href="./discografia.html">Discografia</a></li>
+        <li><a href="./index.html">Home |</a></li> <!--No caso do menu não, mas avaliar que outros links do corpo do site farão uso do target="_blank" para abrir numa nova aba do browser.-->
+        <li><a href="./biografia.html">Biografia |</a></li>
+        <li><a href="./letras.html">Letras |</a></li>
+        <li><a href="./discografia.html">Discografia </a></li>
         </ul>
     </nav> <!--Decidir se será acima, abaixo, dentro do <header> ou na lateral do site.-->
             
@@ -212,18 +242,26 @@
 
 <section>
     <main>
-        <div class="texto">
-            <p>Texto de exemplo.</p><!--Decidir se este estará dentro de uma <div> ou num <article>, por exemplo.-->
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt omnis sapiente ullam harum velit quod quaerat quas, repellat dicta excepturi asperiores numquam minima repudiandae, dolorem architecto cupiditate perspiciatis ut recusandae.
-                </p>           
+        <div class="texto">           
+            <p>All of Me.</p><!--Decidir se este estará dentro de uma <div> ou num <article>, por exemplo.-->
+                <p>"All of Me" é uma música do cantor americano John Legend de seu quarto<br>
+                    álbum de estúdio Love in the Future (2013). É dedicado à esposa de Legend<br>
+                    Chrissy Teigen. "All of Me" foi ao ar pela primeira vez nas principais rádios<br> 
+                    urbanas americanas como o terceiro single do álbum em 12 de agosto de 2013."            
+                </p>          
         </div>
-
+        <img src="assets/imgs/AllOfMe.png" alt="John Legend" id="capaAllOfMe">        
+        <img src="assets/imgs/BotaoPlay.png" title="img botao Play" alt="Botão Play" id="botao-play"> 
         <img src="./assets/imgs/women_sounds.png" title="Imagem de destaque" alt="Imagem da home"  id="inicial"><!--Imagem de destaque na páginal inicial.-->
-               
-               
-    </main>
+    </main>    
 </section>
 <footer>
+    <ul id="footer">
+        <li><a href="#">CONTATO</a></li>
+        <li><a href="#">FACEBOOK</a></li>
+        <li><a href="#">INSTAGRAM</a></li>
+        <li><a href="#">EMAIL</a></li>
+    </ul>    
     <nav>
         <ul>        
         <li><a href="#" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>        
