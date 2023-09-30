@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discografia - Prozmusic</title>
     <link rel="stylesheet" href="discografia.css">
+    <script src="./assets/script/discografia.js"></script>
 </head>
+
 <body>
+
     <a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
     <nav>
         <ul class="navbar-items">
@@ -16,9 +20,12 @@
         </ul>
     </nav>
     <div>
-        <h1>Albums</h1>
-        <div>
-            
+        <div style="display: flex; justify-content:center; flex-direction:column; align-items:center;">
+            <input type="text" name="busca" class="busqueda" placeholder="Buscar...">
+        </div>
+
+        <div class="resultados-discografia">
+
         </div>
     </div>
     <footer>
@@ -30,4 +37,5 @@
         </ul>
     </footer>
 </body>
+
 </html>
