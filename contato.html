@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proz Music - Home</title>
+<title>Proz Music - Contato</title>
 <style>
 	/* Quando se utiliza o grid-auto-rows ou grid-auto-columns, NÃO se pode trabalhar com números negativos */
 
@@ -18,7 +18,7 @@
 	}
 
 	body{    
-		font-family: "Montserrat";
+		font-family: "Montserrat", sans-serif;
 		font-size: clamp(1.3rem, 2vw, 2.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
 		color: #fff;
 		margin: auto;
@@ -55,8 +55,8 @@
 
 	.container {
 		display: grid;
-		grid-template-rows: repeat(7, auto);
-		grid-template-columns: repeat(2, auto);
+		grid-template-rows: repeat(3, auto);
+		grid-template-columns: none;
 		gap: 1rem;
 		height: 75vh;
 	}
@@ -143,10 +143,10 @@
 		color: #fff;		
 	}
 
-	.texto{
+	.txt-contato{
 		display: grid;
 		grid-template-rows: repeat(3, auto); 
-		grid-template-columns: 1.5fr 1fr 0.5fr;
+		grid-template-columns: none;
 		gap: 1rem;
 		justify-content: space-evenly;
 		align-items: start;
@@ -177,15 +177,17 @@
 	}
 	
 	#texto-inicial{
+		display: inline-block;		
 		text-shadow: 0.1rem 0.1rem 0.2rem #000;
-		font-weight: bolder;		
+		font-weight: bolder;
+		margin-top: 0;		
+		margin-bottom: 0;
+		font-size: clamp(1.5rem, 2vw, 3.5rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
 	}
 
-	.texto > h2{
-		font-size: clamp(2rem, 3vw, 5.3rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
-	}
+	
 
-	.texto > p{
+	.txt-contato > p{
 		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
 		margin-left: 2rem;
 	}
@@ -199,33 +201,44 @@
 		text-shadow: 0.1rem 0.1rem 0.2rem #fff;
 	}
 
-	.both { 
-		display: flex;
-		position: absolute;
-		top: 85vh; /*Isso define a posição do campo busca*/
+	.frm-contato{
+		display: grid;
+		grid-template-columns: none;
 	}
 
-
-	input[type=text] {    
-		width: 13rem;
-		box-sizing: border-box;
-		border: 0.2rem solid #000;
-		border-radius: 2rem;
-		font-size: clamp(1rem, 1.3vw, 1.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
-		background-color: white;
-		background-image: url('https://www.w3schools.com/howto/searchicon.png');
-		background-position: 1rem 1rem; 
-		background-repeat: no-repeat;
-		padding: 1.2rem 2rem 1.2rem 4rem;
-		-webkit-transition: width 0.4s ease-in-out;
-		transition: width 0.4s ease-in-out;
-		margin-left: 1.3rem;
+	.frm-contato #txt-area{
+		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		font-family: "Montserrat", sans-serif;
+		border: none;	
+		border-radius: 1.3rem;
+		box-shadow: 0.1rem 0.1rem 0.3rem #000;	
+		padding: 1rem;
 	}
 
-	input[type=text]:focus {
-		margin-left: 0.5rem;
-		width: 71vw
-	}	
+	.frm-contato #txt-area::placeholder{
+		padding: 1rem;
+	}
+
+	.frm-contato #btnSubmit{
+		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		font-family: "Montserrat", sans-serif;
+		font-weight: 800;	
+		border: none;	
+		border-radius: 1.3rem;		
+		height: 4rem;
+		margin-top: 1.5rem;		
+		cursor: pointer;	
+		background-color: #621643;	
+		color: #fff;
+		box-shadow: 0.1rem 0.1rem 0.3rem #fff;	
+	}
+
+	.frm-contato #btnSubmit:hover{
+		background-color: #b054c2;	
+		color: #fff;
+	}
+
+	
 </style>
 </head>
 <body class="gradiente">
@@ -239,22 +252,20 @@
 				<li><a href="./discografia.html">Discografia</a></li>
 				<li><a href="./contato.html">Contato</a></li>
 			</ul>
-		</nav> <!--Decidir se será acima, abaixo, dentro do <header> ou na lateral do site.-->                 
+		</nav> <!--Decidir se será acima, abaixo, dentro do <header> ou na lateral do site.-->                   
 	  </header>
-    <div class="container">	
-      <main>      
-        <div class="texto">
-            <h2 id="texto-inicial">Onde <span id="asterisco">*</span><p> <span class="destacado">você</span> e a <span class="destacado">música</span> </p> <i><span class="destacado">se</span> encontram</i></h2>       
-            <p id="p-inicial">Aqui você encontra seu artista, banda, disco ou música favorita,além de informações variadas sobre temas ligados a música.</p>              
-        </div>                              
-		<img src="./assets/imgs/women_sounds.png" title="Imagem de destaque" alt="Imagem da home"  id="inicial"><!--Imagem de destaque na páginal inicial.-->  
-       </main>
-	   <div class="both">
-        
-		<form>
-			<input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
-		</form>
-	</div>	   
+	  <div class="container">	
+		<main>      
+		  <div class="txt-contato">
+			  <h2 id="texto-inicial">Contato</h2>       
+			  <form action="" class="frm-contato">
+				  <label for=""></label>
+				  <textarea name="txt-area" id="txt-area" cols="100" rows="13" placeholder="Suas sugestões e críticas aqui..."></textarea>
+				  <button type="submit" id="btnSubmit">Enviar</button>
+			  </form>
+		  </div>                              
+		  
+		 </main> 
   
   </div>   
   	<footer>
@@ -264,5 +275,15 @@
 		</ul>
 	</nav>
 	</footer>
+
+	<script>
+		btnSubmit.addEventListener("click", (e)=>{
+		   e.preventDefault()
+	   alert("A conexão com o banco de dados ainda não está implementada.")
+	
+})
+
+
+	</script>
 </body>
 </html>
