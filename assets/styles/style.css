@@ -8,10 +8,12 @@
 }
 
 html, body{
-	font-size: 62.5%;	
-	height: 100%;
-	width: 100%; 	
+    font-size: 62.5%;	
+    height: 100%;
+    width: 100%; 	
 }
+
+
 
 body.gradiente {    
     display: block;
@@ -57,39 +59,60 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    justify-items: center;
 }
 
 main{    
-	display:flex;
-    justify-content: center;
+    display: grid;
+    /* grid-template-rows: repeat(1, auto);  */
+    grid-template-columns: repeat(3, auto); 
+    justify-items: center;
+    align-items: center;
     height: 71vh;     
+    width: 90vw;
     color: #000;
     flex: 1;
+    margin: auto;
 }
 
 .texto{
-	display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-rows: repeat(1, auto); 
+    grid-template-columns: 60% 40%; 
+    justify-content: space-around;
+    align-items: center;
     float: left;
-    height: 68vh;
-    width: 90vw;
+    height: 68vh; 
     color: #fff;    
     background-color: transparent; /* Background fictício. No exemplo do Canva está transparente.*/
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 2rem;
     line-height:1.5;
-	text-align: justify;
+    text-align: left;
     font-size: 2.6rem;
     font-family: 'Montserrat', sans-serif;
 }
 
-#inicial{ /*Colocado apenas para exemplo visual.*/
+#asterisco{
     float: right;
-    height: 35rem; /*Altura fictícia.*/
-    width: 53rem; /*Largura fictícia.*/
-    margin-top: 0.5rem;    
-    border: none;
+    font-size: 5.8rem;
+    color: #D1328E;
+    text-shadow: 1px 1px 2px #fff;
+}
+
+.texto > h2{
+    width: 26rem;
+}
+
+.texto > p{
+    font-size: 1.7rem;
+}
+
+#inicial{ /*Colocado apenas para exemplo visual.*/
+    float: right;    
+    margin-top: -90px;   
+    margin-left: 80px;
  
 }
 
@@ -113,6 +136,7 @@ nav ul li{
 
 nav li a{
     color: #fff;
+    margin-top: 600px;
     text-decoration: none;    
 }    
 
@@ -127,13 +151,13 @@ nav li a:hover{
     top: 86vh;
 }
 
-
+		
 input[type=text] {    
     width: 13rem;
     box-sizing: border-box;
     border: 0.2rem solid #000;
     border-radius: 2rem;
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 1.3vw, 1.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
     background-color: white;
     background-image: url('https://www.w3schools.com/howto/searchicon.png');
     background-position: 1rem 1rem; 
@@ -149,41 +173,6 @@ input[type=text]:focus {
     width: 71vw
 }
 
-.discografia {    
-    margin: auto;
-    max-width: 75vw;
-    height: 81vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 13px;
-    justify-content: center;
-    padding: 13px;
-    box-shadow: 0 0 0.3rem 0.3rem rgb(0, 0, 0);
-    border-radius: 2rem;     
-    text-align: center;  
-
-}
-
-.discos { 
-    height: 85%;        
-    background-color: goldenrod;               
-    align-items: center;
-    color: #000;
-    padding: 0.8rem 0.8rem 5rem;
-    border-radius: 2rem; 
-    box-shadow: 0 0 0.3rem 0.3rem rgb(99, 98, 98); 
-    
-     
-}
-
-.discos img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;  
-    padding: 1rem;
-    border-radius: 2rem;
-}
-
 h1#d_titulo{    
     font-size: 2.5rem;
     text-align: center;
@@ -193,34 +182,75 @@ h1#d_titulo{
 }
 
 footer{    
-	display: flex;
+    display: flex;
     justify-content: end;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
 }
 
-footer {
-    color: #fff;
-    padding: 20px 0;
+#capaAllOfMe {
+    height: 100px;
+    width: 100px;
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
+    top: 40%;
+    right: 59.5%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
-footer ul li {
+#botao-play {
+    height: 50px;
+    width: 60px;
+    position: absolute;
+    top: 40%;
+    right: 62%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+}
+
+
+footer #footer li {
     display: inline-block;
     list-style-type: none;
     padding: 0 20px;
 }
 
-footer ul li a {
+footer #footer li a {
     text-decoration: none;
     color: #fff;
     background-color: #ED3A85;
     background-image: linear-gradient(43deg, #ED3A85 0%, #B054C2 46%, #000 100%);
     padding: 15px 50px;
     border-radius: 5%;
+}
+
+section main .texto #nome-musica {
+    font-weight: bold;
+    margin-left: 400px;
+    margin-top: -55px;
+    
+}
+
+section main .texto p {    
+    margin-left: 100px;
+}
+
+button{
+    width: 100px;
+    max-width: 100%;
+    /* height: 40px; */
+    background: #9E2092;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    top: 2px;
+    font-weight: 600;
+    outline: none;
+}
+button:hover{
+    transform: scale(0.95);
 }
