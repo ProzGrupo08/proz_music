@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discografia - Prozmusic</title>
     <link rel="stylesheet" href="discografia.css">
-    <script src="./assets/script/discografia.js"></script>
+    <script src="./assets/script/discografia.js" defer></script>
 </head>
 
 <body>
 
-    <a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
+    <a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site"
+            class="logo"></a>
     <nav>
         <ul class="navbar-items">
             <li><a href="../index.html">HOME</a></li>
@@ -21,12 +22,14 @@
     </nav>
     <div>
         <div style="display: flex; justify-content:center; flex-direction:column; align-items:center;">
-            <input type="text" name="busca" class="busqueda" placeholder="Buscar...">
+            <div>
+                <input type="text" name="busca" id="artistInput" placeholder="Buscar...">
+                <!-- <button id="fetchDiscography">Buscar</button> -->
+            </div>
+
         </div>
 
-        <div class="resultados-discografia">
-
-        </div>
+        <div class="result"></div>
     </div>
     <footer>
         <ul>
