@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Proz Music - Discografias</title>
+	<script type="text/javascript" src="./assets/scripts/script.js" defer></script>
+	<style>
+		/* Quando se utiliza o grid-auto-rows ou grid-auto-columns, NÃO se pode trabalhar com números negativos */
+	
+		@charset "UTF-8";
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+	
+	
+		html {
+			font-size: 62.5%;
+			height: 90%;
+			
+		}
+	
+		body{    
+			font-family: "Montserrat";
+			font-size: clamp(1.3rem, 2vw, 2.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			color: #fff;
+			margin: auto;
+		}
+	
+		body.gradiente {    
+			display: block;
+			align-items: center;
+			justify-content: center;    
+			width: 98vw;  
+			background: linear-gradient(45deg,#b054c2,#621643);
+			background-size: 300% 300%;
+			animation: gradient-animation 8s ease infinite;
+		}
+				
+		@keyframes gradient-animation {
+			0% {
+			background-position: 0% 50%;
+			}
+			50% {
+			background-position: 100% 50%;
+			}
+			100% {
+			background-position: 0% 50%;
+			}
+		}
+	
+		.container>* {
+			/* min-height: 10rem;
+			border-radius: 0.4rem; */		
+			display: flex; /* Preciso alterar o display nas media-queries*/
+			align-items: center;			
+		}
+	
+		.container {
+			display: grid;
+			grid-template-rows: repeat(3, auto);
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+			height: 75vh;
+		}
+		
+		h1{
+			display: grid;
+			grid-column: 1 / -1;
+			grid-row: 1;
+			}
+	
+		header {		
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;		
+		}
+	
+		header > a > img{
+			height: 19vh; /*Utilizar como unidade de medida o (vh) para height ou (vw) para o width. Como uma se ajusta automaticamente a outra, definir APENAS UMA delas. Isso evita distorcer a imagem.*/
+			object-fit: cover; /*Lembrar de utilizar as especificações OBJECT-FIT e OBJECT-POSITION em todas as imagens*/
+  			object-position: left top;
+		}
+	
+	
+		footer{
+			height: 2vh;     		
+				
+		}
+		
+		#mostrarMenu, #ocultarMenu{
+			border: none;
+			background: none;
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+			padding: 0px 5px;
+			cursor: pointer;
+			display: none;		
+		}	
+	
+		nav{    
+			font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			margin: 0 0.5rem 0 0; /*Atentar em especificar a margem lateral, para não colar no canto da tela*/
+			display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
+			align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
+			justify-content: right; /* Alinha os elementos filhos ao centro horizontalmente */  
+	}
+	
+		nav {	    
+			display: flex;		
+			justify-content: flex-end;
+				
+		}    
+	
+		nav a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		nav a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}
+		
+		#menu a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		#menu a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}	
+	
+		#inicial{ /*Colocado apenas para exemplo visual.*/
+			float: right;		
+			margin: 0 1rem 0 0;		
+			grid-column: -2/-1;
+			grid-row: 2/3;  
+			border: none;	
+			height: 54.7vh; /*Utilizar como unidade de medida o (vh) para height ou (vw) para o width. Como uma se ajusta automaticamente a outra, definir APENAS UMA delas. Isso evita distorcer a imagem.*/
+        	object-fit: cover;
+  			object-position: center; /* O center defini automaticamente 50% no topo e 50% na direita. Apenas lembrar que o position pode ser definido em cada direção na ordem (topo, direita, baixo, esquerda). Ex.: (object-position: top 0 right 10px;)*/
+    	}
+	
+		.logo{
+			float: left;
+			grid-column: 1;
+			grid-row: 1;
+			margin: 0.5rem 0.5rem;   
+			height: 19vh; 
+		}
+	
+	
+	
+		main>*{
+			padding: 0.5rem;
+		}
+	
+		main {
+			margin: auto;		
+		}
+	
+		footer {
+			grid-column: 1/-1;
+			grid-row: -2/-1;	
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;		
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;		
+		}
+	
+		.texto{
+			display: grid;
+			grid-template-rows: repeat(3, auto); 
+			grid-template-columns: 1.5fr 1fr 0.5fr;
+			gap: 1rem;
+			justify-content: space-evenly;
+			align-items: start;
+			float: left;
+			max-height: 53vh; 
+			color: #fff;    
+			background-color: transparent; /* Background fictício. No exemplo do Canva está transparente.*/
+			margin: 0.5rem auto;
+			padding: 0.5rem;
+			border-radius: 2rem;
+			line-height:1.5;
+			text-align: left;		
+			font-family: 'Montserrat', sans-serif;
+		}
+		
+		h2>p{
+			border-top: 0.2rem solid #fff;
+			border-bottom: 0.2rem solid #fff;
+			margin: 0.5rem 0;		
+			padding: 0.5rem 0;
+		}
+	
+		#asterisco{		
+			float: right;		
+			font-size: clamp(3rem, 6.4vw, 7.1rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			color: #D1328E;
+			text-shadow: 0.1rem 0.1rem 0.2rem #fff;		
+		}
+		
+		#texto-inicial{
+			text-shadow: 0.1rem 0.1rem 0.2rem #000;
+			font-weight: bolder;		
+		}
+	
+		.texto > h2{
+			font-size: clamp(2rem, 3vw, 5.3rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		}
+	
+		.texto > p{
+			font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			margin-left: 2rem;
+		}
+		
+		#p-inicial{
+			text-align: justify;
+		}
+		
+		.destacado{
+			color: #D1328E;
+			text-shadow: 0.1rem 0.1rem 0.2rem #fff;
+		}
+	
+		.both { 
+			display: flex;
+			position: absolute;
+			top: 85vh; /*Isso define a posição do campo busca*/
+		}
+	
+	
+		input[type=text] {    
+			width: 13rem;
+			box-sizing: border-box;
+			border: 0.2rem solid #000;
+			border-radius: 2rem;
+			font-size: clamp(1rem, 1.3vw, 1.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			background-color: white;
+			background-image: url('https://www.w3schools.com/howto/searchicon.png');
+			background-position: 1rem 1rem; 
+			background-repeat: no-repeat;
+			padding: 1.2rem 2rem 1.2rem 4rem;
+			-webkit-transition: width 0.4s ease-in-out;
+			transition: width 0.4s ease-in-out;
+			margin-left: 1.3rem;
+		}
+	
+		input[type=text]:focus {
+			margin-left: 0.5rem;
+			width: 71vw
+		}	
+		
+		
+		@media only screen and (max-width: 717px){
+				#mostrarMenu, #ocultarMenu{
+					display: block;
+				}
+				
+				#mostrarMenu{
+					margin-left: auto;
+				}
+				
+				#ocultarMenu{
+					position: fixed;
+					right: 13px;
+					top: 13px;
+				}
+				
+				#menu{
+					position: fixed;
+					flex-direction: column;
+					width: 100vw;
+					height: 100vh;
+					background-color: rgba(98, 22, 67, 0.5);
+					border-radius: 50% 0 50% 50%;
+					align-items: center;
+					justify-content: center;
+					margin: 0;
+					display: none;
+					opacity: 0;
+					transition: 0.3s;			
+				}
+			}		
+    
+	.discografia {    
+		
+		max-width: 75vw;
+		height: 81vh;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 13px;
+		justify-content: center;
+		padding: 13px;
+		box-shadow: 0 0 0.3rem 0.3rem rgb(0, 0, 0);
+		border-radius: 2rem;     
+		text-align: center;  
+	
+	}
+
+	.discos { 
+    	height: 85%;        
+    	background-color: goldenrod;               
+    	align-items: center;
+    	color: #000;
+    	padding: 0.8rem 0.8rem 5rem;
+    	border-radius: 2rem; 
+    	box-shadow: 0 0 0.3rem 0.3rem rgb(99, 98, 98); 
+    	
+     	
+	}
+	
+	.discos img {
+    	width: 100%;
+    	height: 180px;
+    	object-fit: cover;  
+    	padding: 1rem;
+    	border-radius: 2rem;
+	}    
+    
+</style>
+</head>
+<body class="gradiente">
+      <header>
+		<a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
+	 	<button id="mostrarMenu">&#9776;</button>
+		
+		<nav id="menu">
+			<button id="ocultarMenu">X</button>
+			<a href="./index.html">Home</a>
+			<a href="./biografia.html">Biografia</a>
+			<a href="./letras.html">Letras</a>
+			<a href="./discografia.html">Discografia</a>
+			<a href="./contato.html">Contato</a></li>
+		</nav>	             
+	  </header>
+
+    <div class="container">	
+      <main>         
+		<h1 id="d_titulo">Discografia de (exibir nome do(a) artista/banda/grupo)</h1>
+        <div class="discografia">
+            <div class="discos">
+                <img src="./assets/imgs/covers/Sepultura_Roots1996.jpg" title="Sepultura - Roots (1996)" alt="Sepultura - Roots (1996)">
+            </div>
+            <div class="discos">
+                <img src="./assets/imgs/covers/Sepultura_Chaos-AD1993.jpg" title="Sepultura - Chaos A.D. (1993)" alt="Sepultura - Chaos A.D. (1993)">
+            </div>
+            <div class="discos">
+                <img src="./assets/imgs/covers/Gojira_fortitude2021.jpg" title="Gojira - Fortitude (2021)" alt="Gojira - Fortitude (2021)">
+            </div>
+            <div class="discos">
+                <img src="./assets/imgs/covers/KillerBeKilled_KillerBeKilled2014.jpg"  title="Killer Be Killed - Killer Be Killed (2014)" alt="Killer Be Killed - Killer Be Killed (2014)">
+            </div>
+            <div class="discos">
+                <img src="./assets/imgs/covers/Lamb-of-God_Omens2022.jpg" title="Lamb of God - Omens (2022)" alt="Lamb of God - Omens (2022)">
+            </div>
+            <div class="discos">
+                <img src="./assets/imgs/covers/Lamb-of-God_Resolution2012.jpg" title="Lamb of God - Resolution (2012)" alt="Lamb of God - Resolution (2012)">
+            </div>
+        </div>
+    </main>
+	   <div class="both">
+        
+		<form>
+			<input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
+		</form>
+	</div>	   
+  	<footer>
+	<nav>
+		<a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a>
+	</nav>
+	</footer>
+</body>
+</html>
