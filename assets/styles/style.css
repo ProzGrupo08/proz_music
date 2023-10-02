@@ -254,3 +254,9 @@ button{
 button:hover{
     transform: scale(0.95);
 }
+
+#result-text {
+    max-height: 300px; /* Defina a altura máxima desejada */
+    overflow-y: auto; /* Ativa a barra de rolagem vertical quando o conteúdo excede a altura máxima */
+}
+  
