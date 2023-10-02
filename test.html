@@ -1,0 +1,48 @@
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Wikipedia com JS</title>        
+        <style>
+            #resposta{
+                width: 700px;
+                height: 300px;
+                border: 1px solid black;
+                margin-top: 5px;
+                padding: 10px;
+                background-color: lightgreen;
+                overflow: scroll;
+            }
+        </style>
+        <script>
+            function processa() {
+                let t = document.getElementById("termo").value;
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    let r = this.responseText;        
+                    let objResponse = JSON.parse(r);
+                    if (objResponse && objResponse.query && objResponse.query.pages){
+                        let wikiPage = objResponse.query.pages[Object.keys(objResponse.query.pages)[0]];
+                        let mainText = wikiPage["extract"];
+                        if (mainText){             
+                            document.getElementById("resposta").innerHTML = mainText;
+                        }
+                        else {
+                            document.getElementById("resposta").innerHTML = "Não encontrei explicação para " + t;
+                        }
+                    }             
+                }
+                xhttp.open("GET", "https://pt.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&explaintext=1&titles="+t);
+                xhttp.send();    
+            }      
+        </script>
+    </head>
+    <body>
+        <h3>MediaWiki API com JS</h3>
+        <label>Termo:</label>        
+        <input id="termo"/><br>
+        <button onclick="processa()">Processa</button><br>
+        <div id="resposta">
+            ...
+        </div>
+    </body>
+</html>

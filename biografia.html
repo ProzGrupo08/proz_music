@@ -6,8 +6,8 @@
     <title>Biografia</title>
     <link rel="stylesheet" type="text/css" href="./assets/styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css" />
-    <script src="assets/script/biografia.js"></script>
-    <script src="https://genius.codes"></script>
+    <script src="assets/script/biografia.js" defer></script>
+   
 </head>
 <body class="gradiente">
 
@@ -22,14 +22,11 @@
         </ul>
     </nav>             
 </header>
-<section>
+<section class="result" id="result">
     <main>
         <div class="texto">           
             <p id ="nome-musica">All of Me.</p><!--Decidir se este estará dentro de uma <div> ou num <article>, por exemplo.-->
-                <p>"All of Me" é uma música do cantor americano John Legend de seu quarto<br>
-                    álbum de estúdio Love in the Future (2013). É dedicado à esposa de Legend<br>
-                    Chrissy Teigen. "All of Me" foi ao ar pela primeira vez nas principais rádios<br> 
-                    urbanas americanas como o terceiro single do álbum em 12 de agosto de 2013."            
+                <p id="result-text"> result-text            
                 </p>          
         </div>
         <img src="assets/imgs/AllOfMe.png" alt="John Legend" id="capaAllOfMe">        
@@ -38,10 +35,10 @@
     </main>   
 </section>
 <div class="both">        
-    <form id="form">
-        <input type="text" id="inputBiografia" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
-        <button>Search</button>
-    </form>
+    
+        <input type="text" id="input-buscar" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
+        <button onclick="processa()">Search</button>
+    
 </div>	
   <footer>
 <nav>
