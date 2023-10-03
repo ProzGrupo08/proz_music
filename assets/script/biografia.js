@@ -6,7 +6,7 @@ function processa() {
   
 
   if (!inputBusca) {
-    resultText.textContent = "Por favor, digite o nome do autor e da música.";
+    alert("Por favor, digite o nome do autor e da música.");
     return;
   }
 
@@ -57,7 +57,7 @@ function processa() {
   function realizarPesquisa(formasDeBusca, index) {
     if (index >= formasDeBusca.length) {
       // Todas as tentativas de pesquisa foram feitas e nenhum resultado válido foi encontrado
-      resultText.textContent = "Não foi possível encontrar informações.";
+      alert("Não foi possível encontrar informações sobre à Música/Autor");
       return;
     }
 
@@ -101,7 +101,7 @@ function obterImagemWikipedia(title,labelMusic) {
         // Exibir a imagem da Wikipedia se estiver disponível
         const capaMusica = document.getElementById("capaMusica");
         capaMusica.src = thumbnail.source;
-        capaMusica.alt = "${labelMusic}";
+        capaMusica.alt = "labelMusic";
         musica.textContent = labelMusic;
         
         const botaoPlay = document.createElement("img");
@@ -109,7 +109,8 @@ function obterImagemWikipedia(title,labelMusic) {
         botaoPlay.title = "img botao Play";
         botaoPlay.alt = "Botão Play";
         botaoPlay.id = "botao-play";
-        capaMusica.parentNode.appendChild(botaoPlay);
+        
+        document.body.appendChild(botaoPlay);
       }
     })
     .catch((error) => {
