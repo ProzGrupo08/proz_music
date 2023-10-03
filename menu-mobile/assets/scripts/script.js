@@ -31,3 +31,4 @@ btnSubmit.addEventListener("click", (e)=>{
 	alert("A conexão com o banco de dados ainda não está implementada.")
 
 })
+
