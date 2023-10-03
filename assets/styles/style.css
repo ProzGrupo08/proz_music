@@ -198,15 +198,39 @@ footer{
     z-index: 1;
 }
 
-#capaAllOfMe {
+#notaMusical {
     height: 100px;
     width: 100px;
     position: absolute;
-    top: 40%;
-    right: 59.5%;
+    top: 30%;
+    right: 38%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    
 }
+  
+@keyframes swing {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(10deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  #notaMusical {
+    /* Defina a posição inicial */
+    transform: rotate(0deg);
+    /* Defina a origem da transformação no centro da imagem */
+    transform-origin: center;
+    /* Aplique a animação swing com duração de 2 segundos e repetição infinita */
+    animation: swing 2s infinite;
+  }
+  
+
 
 #botao-play {
     height: 50px;
