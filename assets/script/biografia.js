@@ -99,9 +99,9 @@ function obterImagemWikipedia(title,labelMusic) {
 
       if (thumbnail && thumbnail.source) {
         // Exibir a imagem da Wikipedia se estiver disponível
-        const capaAllOfMe = document.getElementById("capaAllOfMe");
-        capaAllOfMe.src = thumbnail.source;
-        capaAllOfMe.alt = "${labelMusic}";
+        const capaMusica = document.getElementById("capaMusica");
+        capaMusica.src = thumbnail.source;
+        capaMusica.alt = "${labelMusic}";
         musica.textContent = labelMusic;
         
         const botaoPlay = document.createElement("img");
@@ -109,7 +109,7 @@ function obterImagemWikipedia(title,labelMusic) {
         botaoPlay.title = "img botao Play";
         botaoPlay.alt = "Botão Play";
         botaoPlay.id = "botao-play";
-        capaAllOfMe.parentNode.appendChild(botaoPlay);
+        capaMusica.parentNode.appendChild(botaoPlay);
       }
     })
     .catch((error) => {
