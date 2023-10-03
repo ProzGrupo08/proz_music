@@ -1,6 +1,9 @@
+const musica = document.getElementById("nome-musica");
+
 function processa() {
   const inputBusca = document.getElementById("input-buscar").value.trim();
   const resultText = document.getElementById("result-text");
+  
 
   if (!inputBusca) {
     resultText.textContent = "Por favor, digite o nome do autor e da música.";
@@ -23,18 +26,17 @@ function processa() {
     return (index === 0 || !palavrasMinusc.includes(word.toLowerCase())) ? primeiraLetraMaiuscula(word) : word.toLowerCase();
   }).join('_'); 
 
-  const formattedString = input.replace(/_/g, ' '); // Fatia à string e remove o _
-  
+  const formattedString = input.replace(/_/g, ' '); // Fatia à string e remove o _  
   const words = formattedString.split(" ");    
   const nomeCantor = words.slice(-2).join("_");  // Captura o valor do cantor quando tiver nome e sobrenome
   const lastNomeCantor = words.slice(-1).join("_");    
   const removeNomeCantor = input.replace(lastNomeCantor,"").replace(/_+$/, "");  
-  const nomeMusica = input.replace(nomeCantor, "");  // Onde tiver o nome do cantor, substitui por vazio
+  const nomeMusica = input.replace(nomeCantor, "");  // Onde tiver o nome do cantor, substitui por vazio  
   const removeUnderlineNomeMusica = nomeMusica.replace(/_+$/, ""); 
   const removeUnderlineAll = nomeMusica.replace(/_/g, '');  // Remove todos Under Line
-  
+  const labelMusic = formattedString.replace(lastNomeCantor,"");
+ 
     
-  // Gerar formas de busca dinâmicas
   const formasDeBusca = []; // Lista vazia 
   formasDeBusca.push(input); // Adiciona Elemento na Lista
   formasDeBusca.push(`${nomeMusica}(canção_de_${lastNomeCantor})`); // Adiciona Elemento na Lista
@@ -71,6 +73,7 @@ function processa() {
         if (extract) {
           // Exibe o resultado se for encontrado
           resultText.innerHTML = extract;
+          obterImagemWikipedia(formaAtual,labelMusic);
         } else {
           // Se nenhum resultado for encontrado, tente a próxima forma de busca
           realizarPesquisa(formasDeBusca, index + 1);
@@ -83,3 +86,27 @@ function processa() {
       });
   }
 }
+
+function obterImagemWikipedia(title,labelMusic) {
+  // Fazer uma solicitação para obter informações de mídia
+  fetch(`https://pt.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=pageimages&titles=${title}&pithumbsize=300`)
+    .then((response) => response.json())
+    .then((mediaData) => {
+      const pages = mediaData.query.pages;
+      const firstPageId = Object.keys(pages)[0];
+      const page = pages[firstPageId];
+      const thumbnail = page.thumbnail;
+
+      if (thumbnail && thumbnail.source) {
+        // Exibir a imagem da Wikipedia se estiver disponível
+        const capaAllOfMe = document.getElementById("capaAllOfMe");
+        capaAllOfMe.src = thumbnail.source;
+        capaAllOfMe.alt = "${labelMusic}";
+        musica.textContent = labelMusic;
+      }
+    })
+    .catch((error) => {
+      console.error("Ocorreu um erro ao buscar informações de mídia: " + error);
+    });
+}
+
