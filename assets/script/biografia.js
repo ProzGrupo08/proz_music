@@ -103,6 +103,13 @@ function obterImagemWikipedia(title,labelMusic) {
         capaAllOfMe.src = thumbnail.source;
         capaAllOfMe.alt = "${labelMusic}";
         musica.textContent = labelMusic;
+        
+        const botaoPlay = document.createElement("img");
+        botaoPlay.src = "assets/imgs/BotaoPlay.png";
+        botaoPlay.title = "img botao Play";
+        botaoPlay.alt = "Botão Play";
+        botaoPlay.id = "botao-play";
+        capaAllOfMe.parentNode.appendChild(botaoPlay);
       }
     })
     .catch((error) => {
