@@ -16,6 +16,29 @@
 			height: 90%;
 		}
 
+		/*Início da modificação da scrollbar (barra de rolagem)*/
+		/*Firefox*/
+		*{
+			scrollbar-width: 12px;
+			scrollbar-color: #b054c2 #621643 /*A primeira cor é do botão e a segunda do fundo*/		
+		}
+		
+		/*Chrome, Edge e Safari*/
+		::-webkit-scrollbar{
+			width: 1.2rem;
+		}
+		
+		::-webkit-scrollbar-track{
+			background: #621643;
+		}
+		
+		::-webkit-scrollbar-thumb{
+			background-color: #b054c2;
+			border-radius: 1.3rem;
+			o
+		}   
+		/*Fim da modificação da scrollbar (barra de rolagem)*/
+
 		body {
 			font-family: "Montserrat";
 			font-size: clamp(1.3rem,
