@@ -111,6 +111,7 @@ function obterImagemWikipedia(title,labelMusic) {
         const capaMusica = document.getElementById("capaMusica");
         capaMusica.src = thumbnail.source;
         capaMusica.alt = "labelMusic";
+        capaMusica.style.animation = "block";
         musica.textContent = labelMusic;
         
         const botaoPlay = document.createElement("img");
