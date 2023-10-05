@@ -139,6 +139,7 @@
 		
 		::-webkit-scrollbar-track{
 			background: #621643;
+			border-radius: 1.3rem;
 		}
 		
 		::-webkit-scrollbar-thumb{
@@ -258,8 +259,9 @@ button {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
     font-weight: bold;
-    background-color: #621643;
-    color: #fff;
+	background-color: #621643;	
+	color: #fff;
+	box-shadow: 0.1rem 0.1rem 0.3rem #fff;	
     border: none;
     border-radius: 1.3rem;
     cursor: pointer;

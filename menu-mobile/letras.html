@@ -2,12 +2,264 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/styles/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Proz Music - Letras</title>
     <script src="./assets/scripts/script.js" defer></script>
     <script src="./assets/scripts/script2.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Proz Music - Letras</title>
+    <style>    
+    			/* Quando se utiliza o grid-auto-rows ou grid-auto-columns, NÃO se pode trabalhar com números negativos */
+	
+		@charset "UTF-8";
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+	
+	
+		html {
+			font-size: 62.5%;
+			height: 90%;
+			
+		}
+		
+		/*Início da modificação da scrollbar (barra de rolagem)*/
+		/*Firefox*/
+		*{
+			scrollbar-width: 12px;
+			scrollbar-color: #b054c2 #621643 /*A primeira cor é do botão e a segunda do fundo*/		
+		}
+		
+		/*Chrome, Edge e Safari*/
+		::-webkit-scrollbar{
+			width: 1.2rem;
+		}
+		
+		::-webkit-scrollbar-track{
+			background: #621643;
+			border-radius: 1.3rem;
+		}
+		
+		::-webkit-scrollbar-thumb{
+			background-color: #b054c2;
+			border-radius: 1.3rem;
+			o
+		}   
+		/*Fim da modificação da scrollbar (barra de rolagem)*/		
+	
+		body{    
+			font-family: "Montserrat";
+			font-size: clamp(1.3rem, 2vw, 2.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			color: #fff;
+			margin: auto;
+		}
+	
+		body.gradiente {    
+			display: block;
+			align-items: center;
+			justify-content: center;    
+			width: 98vw;  
+			background: linear-gradient(45deg,#b054c2,#621643);
+			background-size: 300% 300%;
+			animation: gradient-animation 8s ease infinite;
+		}
+				
+		@keyframes gradient-animation {
+			0% {
+			background-position: 0% 50%;
+			}
+			50% {
+			background-position: 100% 50%;
+			}
+			100% {
+			background-position: 0% 50%;
+			}
+		}
+	
+		.container>* {
+			/* min-height: 10rem;
+			border-radius: 0.4rem; */		
+			display: flex; /* Preciso alterar o display nas media-queries*/
+			align-items: center;			
+		}
+	
+		.container {
+			display: grid;
+			grid-template-rows: repeat(7, auto);
+			grid-template-columns: repeat(2, auto);
+			gap: 1rem;
+			height: 75vh;
+		}
+	
+		header {		
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;		
+		}
+	
+		header > a > img{
+			height: 19vh; /*Utilizar como unidade de medida o (vh) para height ou (vw) para o width. Como uma se ajusta automaticamente a outra, definir APENAS UMA delas. Isso evita distorcer a imagem.*/
+			object-fit: cover; /*Lembrar de utilizar as especificações OBJECT-FIT e OBJECT-POSITION em todas as imagens*/
+  			object-position: left top;
+		}
+		
+		#mostrarMenu, #ocultarMenu{
+			border: none;
+			background: none;
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+			padding: 0px 5px;
+			cursor: pointer;
+			display: none;		
+		}	
+	
+		nav{    
+			font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			margin: 0 0.5rem 0 0; /*Atentar em especificar a margem lateral, para não colar no canto da tela*/
+			display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
+			align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
+			justify-content: right; /* Alinha os elementos filhos ao centro horizontalmente */  
+	}
+	
+		nav {	    
+			display: flex;		
+			justify-content: flex-end;
+				
+		}    
+	
+		nav a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		nav a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}
+		
+		#menu a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		#menu a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}	
+		
+
+		
+		
+		input[type=text] {    
+    		width: 13rem;
+    		box-sizing: border-box;
+    		border: 0.2rem solid #000;
+    		border-radius: 2rem;
+    		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+    		background-color: white;
+    		background-image: url('https://www.w3schools.com/howto/searchicon.png');
+    		background-position: 1rem 1rem; 
+    		background-repeat: no-repeat;
+    		padding: 1.2rem 2rem 1.2rem 4rem;
+    		-webkit-transition: width 0.4s ease-in-out;
+    		transition: width 0.4s ease-in-out;
+    		margin-left: 1.3rem;
+		}
+		
+		input[type=text]:focus {
+    		margin-left: 0.5rem;
+    		width: 35vw
+		}	
+		
+		footer{
+			height: 2vh;
+		}		
+	
+		footer {
+			grid-column: 1/-1;
+			grid-row: -2/-1;	
+			display: flex;
+			flex-direction: row-reverse;
+			justify-content: space-between;		
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;		
+		}
+		
+		body {
+    		font-family: 'Montserrat', sans-serif;
+    		text-align: center;
+    		margin: 2rem;
+		}
+		label {
+    		font-family: 'Montserrat', sans-serif;
+    		font-size: 1.8rem;
+    		font-weight: bold;
+    		margin-right: 2rem;
+    		color: #fff;
+    		
+		}
+		
+		button {
+    		padding: 1rem 2rem;
+    		font-family: 'Montserrat', sans-serif;
+    		font-size: 1.8rem;
+    		font-weight: bold;
+			background-color: #621643;	
+			color: #fff;
+			box-shadow: 0.1rem 0.1rem 0.3rem #fff;	
+    		border: none;
+    		border-radius: 1.3rem;
+    		cursor: pointer;
+		}
+		button:hover {
+    		background-color: #b054c2;
+		}
+		#resultado {
+    		font-size: clamp(1.3rem, 2vw, 2.1rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+    		color: #fff;
+    		margin-top: 2rem;
+    		height: 30rem; /* Altura máxima da caixa de texto */
+    		overflow-y: auto; /* Adicionar barra de rolagem vertical quando necessário */
+		}
+
+		
+		@media only screen and (max-width: 717px){
+				#mostrarMenu, #ocultarMenu{
+					display: block;
+				}
+				
+				#mostrarMenu{
+					margin-left: auto;
+				}
+				
+				#ocultarMenu{
+					position: fixed;
+					right: 13px;
+					top: 13px;
+				}
+				
+				#menu{
+					position: fixed;
+					flex-direction: column;
+					width: 100vw;
+					height: 100vh;
+					background-color: rgba(98, 22, 67, 0.5);
+					border-radius: 50% 0 50% 50%;
+					align-items: center;
+					justify-content: center;
+					margin: 0;
+					display: none;
+					opacity: 0;
+					transition: 0.3s;			
+				}
+			}	
+
+    </style>
     
 </head>
 <body class="gradiente">
@@ -26,43 +278,40 @@
             
 </header>
 
+	<div>
+    	<main>
+        	<div>            
+            	<!-- Campo de pesquisa para o nome do artista -->
+            	<label for="artista">Nome do Artista:</label>
+            	<input type="text" id="artista" placeholder="Nome do artista">
+    	
+            	<!-- Campo de pesquisa para o nome da música -->
+            	<label for="musica">Nome da Música:</label>
+            	<input type="text" id="musica" placeholder="Nome da música">
+    	
+            	<!-- Botão para buscar a letra da música -->
+            	<button id="buscar">Buscar Letra</button>
+    	
+            	<!-- Resultado da pesquisa -->
+            	<div id='resultado'>
+                	<!-- O conteúdo da letra da música será exibido aqui -->
+            	</div>
+                    	<!-- Resultado do vídeo -->
+            	<div id="video">
+            	<!-- O vídeo relacionado será exibido aqui -->
+            	</div>
+        	</div>             
+    	</main>
 
-    <main>
-        <div>
-            
-            <!-- Campo de pesquisa para o nome do artista -->
-            <label for="artista">Nome do Artista:</label>
-            <input type="text" id="artista" placeholder="Nome do artista">
-    
-            <!-- Campo de pesquisa para o nome da música -->
-            <label for="musica">Nome da Música:</label>
-            <input type="text" id="musica" placeholder="Nome da música">
-    
-            <!-- Botão para buscar a letra da música -->
-            <button id="buscar">Buscar Letra</button>
-    
-            <!-- Resultado da pesquisa -->
-            <div id='resultado'>
-                <!-- O conteúdo da letra da música será exibido aqui -->
-            </div>
-                    <!-- Resultado do vídeo -->
-            <div id="video">
-            <!-- O vídeo relacionado será exibido aqui -->
-            </div>
-        </div>
-
-       
-               
-    </main>
 
 	   <!--<div class="both">
         
 		<form>
 			<input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
-	
-    <footer>
-        <nav>
-            <a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a>
-        </nav>
-    </footer>
+	    </div>
+  	<footer>
+		<nav>
+			<a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a>
+		</nav>
+	</footer>
 </body>
