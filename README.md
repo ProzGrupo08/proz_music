@@ -1,10 +1,27 @@
-## Isso é apenas para deixar algumas anotações para vcs, mas logo apagaremos.
+# Proz Music - Página Web de Música
 
-Tive que mandar para cá logo, pois minha máquina está **apresentando problemas** e preciso garantir um **backup**.
+Este é um projeto de website de música desenvolvido como parte do projeto educacional "Proz Educação". A página permite aos usuários buscar artistas por discografia, biografias e letras de músicas.
 
-### Tudo é apenas inicial, experimental e meramente colocado para uma visão prévia de onde alocaremos os elementos.
+## Funcionalidades Principais
 
-____________________________________________
-Os arquivos estão comentados e com muita coisa para corrigir ainda.
-É isso é, qualquer coisa, me avisa lá no zap.
-Blz?
+- **Discografia**: Visualize os álbuns de seus artistas favoritos e veja as capas dos álbuns.
+
+- **Biografias**: Leia informações detalhadas sobre os artistas, incluindo suas carreiras e histórias.
+
+- **Letras de Músicas**: Encontre as letras de suas músicas favoritas e cante junto.
+
+## Tecnologias Utilizadas
+
+- HTML: Para estruturar a página.
+
+- CSS: Para estilizar a página e torná-la atraente visualmente.
+
+- JavaScript: Para tornar a página interativa e permitir buscas dinâmicas de artistas.
+
+## Como Usar
+
+1. Clone este repositório em sua máquina local usando o seguinte comando:
+
+   ```bash
+   git clone https://github.com/ProzGrupo08/proz_music.git
+   ```
