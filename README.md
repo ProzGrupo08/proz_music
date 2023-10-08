@@ -25,3 +25,29 @@ Este é um projeto de website de música desenvolvido como parte do projeto educ
    ```bash
    git clone https://github.com/ProzGrupo08/proz_music.git
    ```
+2. Abra o arquivo index.html em seu navegador para acessar a página principal.
+
+3. Use a barra de pesquisa para buscar artistas por nome, discografia ou letras de músicas.
+
+4. Clique nos resultados para obter mais informações sobre os artistas.
+
+## Contribuições
+
+1. Faça um fork do repositório.
+
+2. Clone o fork em sua máquina local.
+
+3. Crie uma nova branch para suas alterações:
+
+```
+git checkout -b feature/sua-feature
+```
+4. Faça suas alterações e adicione commits significativos.
+
+5. Envie as alterações para o GitHub:
+
+```
+git push origin feature/sua-feature
+```
+
+6. Abra um pull request para revisão.

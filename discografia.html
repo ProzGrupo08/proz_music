@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./menu-mobile/assets/scripts/discografia.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Proz Music - Discografia</title>
     <style>
         @charset "UTF-8";
@@ -125,21 +127,6 @@
             height: 19vh;
         }
 
-        .discografia {
-            margin: 9rem 18rem;
-            max-width: 75vw;
-            height: 70vh;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 13px;
-            justify-content: center;
-            padding: 13px;
-            box-shadow: 0 0 0.3rem 0.3rem rgb(0, 0, 0);
-            border-radius: 2rem;
-            text-align: center;
-
-        }
-
         .discos {
             height: 85%;
             background-color: goldenrod;
@@ -214,6 +201,12 @@
             margin-left: 1.3rem;
         }
 
+        .discografia{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
         input[type=text]:focus {
             margin-left: 0.5rem;
             width: 71vw
@@ -225,6 +218,11 @@
             padding: 1rem;
             color: #000;
             text-shadow: 0.1rem 0.1rem 0.3rem #fff;
+        }
+
+        .imgs-cover{
+            max-width: 100%;
+            height: auto;
         }
 
         footer {
@@ -260,36 +258,11 @@
 
     <div class="container">
         <main>
-            <div class="discografia">
-                <div class="discos">
-                    <img src="./assets/imgs/covers/Sepultura_Roots1996.jpg" title="Sepultura - Roots (1996)"
-                        alt="Sepultura - Roots (1996)">
-                </div>
-                <div class="discos">
-                    <img src="./assets/imgs/covers/Sepultura_Chaos-AD1993.jpg" title="Sepultura - Chaos A.D. (1993)"
-                        alt="Sepultura - Chaos A.D. (1993)">
-                </div>
-                <div class="discos">
-                    <img src="./assets/imgs/covers/Gojira_fortitude2021.jpg" title="Gojira - Fortitude (2021)"
-                        alt="Gojira - Fortitude (2021)">
-                </div>
-                <div class="discos">
-                    <img src="./assets/imgs/covers/KillerBeKilled_KillerBeKilled2014.jpg"
-                        title="Killer Be Killed - Killer Be Killed (2014)"
-                        alt="Killer Be Killed - Killer Be Killed (2014)">
-                </div>
-                <div class="discos">
-                    <img src="./assets/imgs/covers/Lamb-of-God_Omens2022.jpg" title="Lamb of God - Omens (2022)"
-                        alt="Lamb of God - Omens (2022)">
-                </div>
-                <div class="discos">
-                    <img src="./assets/imgs/covers/Lamb-of-God_Resolution2012.jpg"
-                        title="Lamb of God - Resolution (2012)" alt="Lamb of God - Resolution (2012)">
-                </div>
+            <div class="discografia" id="resultados">
             </div>
         </main>
         <div class="both">
-            <input type="text" name="busca" placeholder="Buscar...">
+            <input id="query" type="text" name="busca" placeholder="Buscar...">
         </div>
         <footer>
             <nav>
