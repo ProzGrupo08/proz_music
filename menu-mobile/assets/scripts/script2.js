@@ -18,8 +18,19 @@ function buscarLetra() {
                                 '<p>Música: ' + nomeMusica + '</p>';
 
             // Exibir a letra da música no elemento "resultado" com os detalhes
-            var letraComQuebraDeLinha = data.mus[0].text.replace(/\n/g, '<br>');
-            $('#resultado').html(detalhesMusica + letraComQuebraDeLinha);
+            var letra = data.mus[0].text;
+            var refrões = letra.split(/\[.*?\]/g); // Separa a letra em refrões
+
+            var letraFormatada = ''; // Para armazenar a letra formatada
+            for (var i = 0; i < refrões.length; i++) {
+                if (refrões[i].trim() !== '') {
+                    // Centraliza o texto do refrão usando CSS
+                    letraFormatada += '<div style="text-align: center;">' + refrões[i].replace(/\n/g, '<br>') + '</div>';
+                }
+            }
+
+            // Exibir a letra da música no centro do elemento "resultado" com detalhes e refrões
+            $('#resultado').html(detalhesMusica + letraFormatada);
 
             // Buscar vídeo no YouTube com base no nome da música
             var apiKey = 'AIzaSyAu-rj5xMlknShTkj1VdzdoTDPuVciZtXQ';
