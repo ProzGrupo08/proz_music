@@ -10,9 +10,16 @@ function buscarLetra() {
 
     $.getJSON(url, function (data) {
         if (data.type == 'exact' || data.type == 'aprox') {
-            // Exibir a letra da música no elemento "resultado"
+            // Exibir o nome do artista e o nome da música
+            var nomeArtista = data.art.name;
+            var nomeMusica = data.mus[0].name;
+
+            var detalhesMusica = '<p>Artista: ' + nomeArtista + '</p>' +
+                                '<p>Música: ' + nomeMusica + '</p>';
+
+            // Exibir a letra da música no elemento "resultado" com os detalhes
             var letraComQuebraDeLinha = data.mus[0].text.replace(/\n/g, '<br>');
-            $('#resultado').html(letraComQuebraDeLinha);
+            $('#resultado').html(detalhesMusica + letraComQuebraDeLinha);
 
             // Buscar vídeo no YouTube com base no nome da música
             var apiKey = 'AIzaSyAu-rj5xMlknShTkj1VdzdoTDPuVciZtXQ';
