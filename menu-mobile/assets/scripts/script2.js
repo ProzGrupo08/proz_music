@@ -46,3 +46,15 @@ function buscarLetra() {
 
 // Associar a função de busca ao clique no botão
 $("#buscar").click(buscarLetra);
+
+
+// Função para limpar os campos de pesquisa
+function limparCampos() {
+    $("#artista").val('');
+    $("#musica").val('');
+    $('#resultado').html(''); // Limpa o resultado da pesquisa
+    $('#video').html(''); // Limpa o vídeo relacionado
+}
+
+// Associar a função de limpar ao clique no botão
+$("#limpar").click(limparCampos);
