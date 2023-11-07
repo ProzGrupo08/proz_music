@@ -261,22 +261,56 @@
 		display: grid;
 		grid-template-columns: none;		
 	}
+	
+	.txt-contato h2{
+		margin-bottom: 0.5rem;
+		}
 
 	.frm-contato #txt-area{
 		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
 		font-family: "Montserrat", sans-serif;
-		height: 35vh;
+		height: 25vh;
 		width: 71vw;
-		margin: auto;
+		margin: 1rem auto;
 		border: none;	
 		border-radius: 1.3rem;
 		box-shadow: 0.1rem 0.1rem 0.5rem #ED3A85;	
 		padding: 1rem;
 	}
-
+	
 	.frm-contato #txt-area::placeholder{
 		padding: 1rem;
+	}	
+	
+	.frm-contato #dados_usuario{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	justify-content: space-between;
 	}
+	
+	.frm-contato #nome{
+		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		font-family: "Montserrat", sans-serif;
+		height: 1.5vh;
+		width: 25vw;
+		margin: 1rem;
+		border: none;	
+		border-radius: 1.3rem;
+		box-shadow: 0.1rem 0.1rem 0.5rem #ED3A85;	
+		padding: 1rem;
+	}	
+	
+	.frm-contato #email{
+		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+		font-family: "Montserrat", sans-serif;
+		height: 1.5vh;
+		width: 25vw;
+		margin: 1rem;
+		border: none;	
+		border-radius: 1.3rem;
+		box-shadow: 0.1rem 0.1rem 0.5rem #ED3A85;	
+		padding: 1rem;
+	}		
 
 	.frm-contato #btnSubmit{
 		font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
@@ -319,7 +353,17 @@
 		  <div class="txt-contato">
 			  <h2 id="texto-inicial">Contato</h2>       
 			  <form action="" class="frm-contato">
-				  <label for=""></label>
+			<div id="dados_usuario">
+			     	<div>
+        	<label for="nome">Nome:</label>
+        	<input type="texto" id="nome" name="nome_usuario" placeholder="Seu nome">
+    	</div>
+    	<div>
+        	<label for="email">E-mail:</label>
+        	<input type="email" id="email" name="email_usuario" placeholder="Seu e-mail">
+    	</div>
+    	</div>
+				  <label for="txt-area"></label>
 				  <textarea name="txt-area" id="txt-area" cols="100" rows="13" placeholder="Suas sugestões e críticas aqui..."></textarea>
 				  <button type="submit" id="btnSubmit">Enviar</button>
 			  </form>
