@@ -2,7 +2,7 @@ const API_KEY = 'bdb11fddf6msh306d9980f566ee8p138cc2jsnacd2bd7d40fa';
 const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/';
 const query = document.getElementById("query");
 const divResults = document.getElementById("resultados");
-const numImagesToShow = 6;
+const numImagesToShow = 9;
 
 function searchTracks(singerName) {
   const url = `${BASE_URL}search?q=${singerName}`;
