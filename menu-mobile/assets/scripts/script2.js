@@ -10,9 +10,27 @@ function buscarLetra() {
 
     $.getJSON(url, function (data) {
         if (data.type == 'exact' || data.type == 'aprox') {
-            // Exibir a letra da música no elemento "resultado"
-            var letraComQuebraDeLinha = data.mus[0].text.replace(/\n/g, '<br>');
-            $('#resultado').html(letraComQuebraDeLinha);
+            // Exibir o nome do artista e o nome da música
+            var nomeArtista = data.art.name;
+            var nomeMusica = data.mus[0].name;
+
+            var detalhesMusica = '<p>Artista: ' + nomeArtista + '</p>' +
+                                '<p>Música: ' + nomeMusica + '</p>';
+
+            // Exibir a letra da música no elemento "resultado" com os detalhes
+            var letra = data.mus[0].text;
+            var refrões = letra.split(/\[.*?\]/g); // Separa a letra em refrões
+
+            var letraFormatada = ''; // Para armazenar a letra formatada
+            for (var i = 0; i < refrões.length; i++) {
+                if (refrões[i].trim() !== '') {
+                    // Centraliza o texto do refrão usando CSS
+                    letraFormatada += '<div style="text-align: center;">' + refrões[i].replace(/\n/g, '<br>') + '</div>';
+                }
+            }
+
+            // Exibir a letra da música no centro do elemento "resultado" com detalhes e refrões
+            $('#resultado').html(detalhesMusica + letraFormatada);
 
             // Buscar vídeo no YouTube com base no nome da música
             var apiKey = 'AIzaSyAu-rj5xMlknShTkj1VdzdoTDPuVciZtXQ';
@@ -46,3 +64,15 @@ function buscarLetra() {
 
 // Associar a função de busca ao clique no botão
 $("#buscar").click(buscarLetra);
+
+
+// Função para limpar os campos de pesquisa
+function limparCampos() {
+    $("#artista").val('');
+    $("#musica").val('');
+    $('#resultado').html(''); // Limpa o resultado da pesquisa
+    $('#video').html(''); // Limpa o vídeo relacionado
+}
+
+// Associar a função de limpar ao clique no botão
+$("#limpar").click(limparCampos);

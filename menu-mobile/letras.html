@@ -40,18 +40,18 @@
 		::-webkit-scrollbar-thumb{
 			background-color: #b054c2;
 			border-radius: 1.3rem;
-			o
+			
 		}   
 		/*Fim da modificação da scrollbar (barra de rolagem)*/		
-	
-		body{    
+		body{
 			font-family: "Montserrat";
 			font-size: clamp(1.3rem, 2vw, 2.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
 			color: #fff;
 			margin: auto;
+
 		}
 	
-		body.gradiente {    
+		body.gradiente {
 			display: block;
 			align-items: center;
 			justify-content: center;    
@@ -190,11 +190,6 @@
 			color: #fff;		
 		}
 		
-		body {
-    		font-family: 'Montserrat', sans-serif;
-    		text-align: center;
-    		margin: 2rem;
-		}
 		label {
     		font-family: 'Montserrat', sans-serif;
     		font-size: 1.8rem;
@@ -278,7 +273,7 @@
             
 </header>
 
-	<div>
+	<div class="container">
     	<main>
         	<div>            
             	<!-- Campo de pesquisa para o nome do artista -->
@@ -291,7 +286,10 @@
     	
             	<!-- Botão para buscar a letra da música -->
             	<button id="buscar">Buscar Letra</button>
-    	
+				<!-- Botão para limpar os campos de pesquisa -->
+				
+				<button id="limpar">Limpar resultado</button>
+
             	<!-- Resultado da pesquisa -->
             	<div id='resultado'>
                 	<!-- O conteúdo da letra da música será exibido aqui -->
@@ -307,11 +305,13 @@
 	   <!--<div class="both">
         
 		<form>
-			<input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
-	    </div>
+	
+            <input type="text" name="busca" placeholder="Buscar..."> <!--Ainda aprenderemos sobre as tags <form> e <input>, mas apenas para visualizarmos.-->
+	</div>
   	<footer>
 		<nav>
 			<a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a>
 		</nav>
 	</footer>
 </body>
+</html>
