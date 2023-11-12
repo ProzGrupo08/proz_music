@@ -2,7 +2,7 @@ const API_KEY = 'bdb11fddf6msh306d9980f566ee8p138cc2jsnacd2bd7d40fa';
 const BASE_URL = 'https://deezerdevs-deezer.p.rapidapi.com/';
 const query = document.getElementById("query");
 const divResults = document.getElementById("resultados");
-const numImagesToShow = 9;
+const numImagesToShow = 15;
 
 function searchTracks(singerName) {
   const url = `${BASE_URL}search?q=${singerName}`;
@@ -24,13 +24,16 @@ function searchTracks(singerName) {
     })
     .then((res) => {
       const albums = res.data.map((item) => item.album);
-      for (let i = 0; i < numImagesToShow; i++) {
+      for (let i = 6; i < numImagesToShow; i++) {
         const imgInfo = albums[i];
+        const p = document.createElement('p');
+        p.innerHTML = imgInfo.title
         const imgElement = document.createElement('img');
         imgElement.src = imgInfo.cover;
         imgElement.alt = imgInfo.title;
         imgElement.className ="imgs-cover";
         divResults.appendChild(imgElement);}
+        console.log(albums);
     })
     .catch((error) => {
       console.error('Error: ' + error.message);
