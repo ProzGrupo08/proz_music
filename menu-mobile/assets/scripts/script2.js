@@ -1,13 +1,16 @@
 // Função para buscar a letra da música e o vídeo relacionado
-function buscarLetra() {
-    var artista = $("#artista").val();
-    var musica = $("#musica").val();
+function buscarLetra(event) {
+    // Verifique se a tecla pressionada é a tecla Enter (código 13) ou se o botão "Buscar Letra" foi clicado
+    if (event.keyCode === 13 || event.target.id === 'buscar') {
+        var artista = $("#artista").val();
+        var musica = $("#musica").val();
 
-    // Adicione feedback visual
-    $('#resultado').html('Buscando...');
+        // Adicione feedback visual
+        $('#resultado').html('Buscando...');
 
-    var url = "https://api.vagalume.com.br/search.php?art=" + encodeURIComponent(artista) + "&mus=" + encodeURIComponent(musica);
+        var url = "https://api.vagalume.com.br/search.php?art=" + encodeURIComponent(artista) + "&mus=" + encodeURIComponent(musica);
 
+    }
     $.getJSON(url, function (data) {
         if (data.type == 'exact' || data.type == 'aprox') {
             // Exibir o nome do artista e o nome da música
@@ -90,6 +93,7 @@ function limparCampos() {
 
 // Associar a função de busca ao clique no botão
 $("#buscar").click(buscarLetra);
+$("#artista, #musica").keypress(buscarLetra);
 
 // Associar a função de limpar ao clique no botão
 $("#limpar").click(limparCampos);
