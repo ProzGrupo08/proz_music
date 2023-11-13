@@ -7,6 +7,7 @@
     <script src="./assets/scripts/script.js" defer></script>
     <script src="./assets/scripts/script2.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <style>    
     			/* Quando se utiliza o grid-auto-rows ou grid-auto-columns, NÃO se pode trabalhar com números negativos */
 	
@@ -77,7 +78,7 @@
 			/* min-height: 10rem;
 			border-radius: 0.4rem; */		
 			display: flex; /* Preciso alterar o display nas media-queries*/
-			align-items: center;			
+			align-items: center;		
 		}
 	
 		.container {
@@ -221,7 +222,9 @@
     		height: 30rem; /* Altura máxima da caixa de texto */
     		overflow-y: auto; /* Adicionar barra de rolagem vertical quando necessário */
 		}
-
+		#youtube-iframe{
+			padding-top: 80px;
+		}
 		
 		@media only screen and (max-width: 717px){
 				#mostrarMenu, #ocultarMenu{
@@ -253,7 +256,7 @@
 					transition: 0.3s;			
 				}
 			}	
-
+		
     </style>
     
 </head>
@@ -294,12 +297,10 @@
             	<div id='resultado'>
                 	<!-- O conteúdo da letra da música será exibido aqui -->
             	</div>
-                    	<!-- Resultado do vídeo -->
-            	<div id="video">
-            	<!-- O vídeo relacionado será exibido aqui -->
-            	</div>
+                
         	</div>             
     	</main>
+		<iframe id="youtube-iframe" width="500px" height="315px" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 	   <!--<div class="both">
