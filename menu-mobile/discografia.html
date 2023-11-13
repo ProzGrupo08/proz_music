@@ -16,16 +16,16 @@
 		html {
 			font-size: 62.5%;
 			height: 90%;
-		}
-
-		body {
+		  }
+		  
+		  body {
 			font-family: "Montserrat";
 			font-size: clamp(1.3rem, 2vw, 2.6rem);
 			color: #fff;
 			margin: auto;
-		}
-
-		body.gradiente {
+		  }
+		  
+		  body.gradiente {
 			display: block;
 			align-items: center;
 			justify-content: center;
@@ -33,42 +33,41 @@
 			background: linear-gradient(45deg, #621643, #b054c2);
 			background-size: 300% 300%;
 			animation: gradient-animation 13s ease infinite;
-		}
-
-		@keyframes gradient-animation {
+		  }
+		  
+		  @keyframes gradient-animation {
 			0% {
-				background-position: 0% 50%;
+			  background-position: 0% 50%;
 			}
-
+		  
 			50% {
-				background-position: 100% 50%;
+			  background-position: 100% 50%;
 			}
-
+		  
 			100% {
-				background-position: 0% 50%;
+			  background-position: 0% 50%;
 			}
-		}
-
-		header {
+		  }
+		  
+		  header {
 			display: flex;
 			justify-content: space-between;
 			font-family: 'Montserrat', sans-serif;
 			color: #fff;
-
-		}
-
-		header>a>img {
+		  }
+		  
+		  header>a>img {
 			height: 13rem;
-		}
-
-		section {
+		  }
+		  
+		  section {
 			display: flex;
 			flex-direction: row;
 			justify-content: space-between;
 			justify-items: center;
-		}
-
-		main {
+		  }
+		  
+		  main {
 			display: grid;
 			grid-template-columns: repeat(3, auto);
 			justify-items: center;
@@ -78,17 +77,17 @@
 			color: #000;
 			flex: 1;
 			margin: auto;
-		}
-
-		.logo {
+		  }
+		  
+		  .logo {
 			float: left;
 			grid-column: 1;
 			grid-row: 1;
 			margin: 0.5rem 0.5rem;
 			height: 19vh;
-		}
-
-		.discos {
+		  }
+		  
+		  .discos {
 			height: 85%;
 			background-color: goldenrod;
 			align-items: center;
@@ -96,57 +95,33 @@
 			padding: 0.8rem 0.8rem 5rem;
 			border-radius: 2rem;
 			box-shadow: 0 0 0.3rem 0.3rem rgb(99, 98, 98);
-		}
-
-		.discos img {
+		  }
+		  
+		  .discos img {
 			width: 100%;
 			height: 180px;
 			object-fit: cover;
 			padding: 1rem;
 			border-radius: 2rem;
-		}
-
-		h1#d_titulo {
+		  }
+		  
+		  h1#d_titulo {
 			font-size: 2.5rem;
 			text-align: center;
 			padding: 1rem;
 			color: #000;
 			text-shadow: 0.1rem 0.1rem 0.3rem #fff;
-		}
-
-		nav {
-			font-size: clamp(1.3rem, 2vw, 1.8rem);
-			margin: 0 0.5rem 0 0;
-			display: flex;
-			align-items: center;
-			justify-content: right;
-		}
-
-		nav ul li {
-			display: inline-block;
-
-		}
-
-		nav li a {
-			color: #fff;
-			text-decoration: none;
-		}
-
-		nav li a:hover {
-			text-decoration: underline;
-			font-weight: bolder;
-		}
-
-		.both {
+		  }
+		  
+		  .both {
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			margin-top: -60rem;
 			margin-left: 5rem;
-		}
-
-
-		input[type=text] {
+		  }
+		  
+		  input[type=text] {
 			width: 13rem;
 			box-sizing: border-box;
 			border: 0.2rem solid #000;
@@ -162,87 +137,80 @@
 			margin-left: 1.3rem;
 			position: relative;
 			top: 19rem;
-		}
-
-		.discografia {
+		  }
+		  
+		  .discografia {
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
 			gap: 10px;
 			margin-top: 7rem;
-		}
-
-		input[type=text]:focus {
+		  }
+		  
+		  input[type=text]:focus {
 			margin-left: 0.5rem;
-			width: 71vw
-		}
-
-		h1#d_titulo {
+			width: 71vw;
+		  }
+		  
+		  h1#d_titulo {
 			font-size: 2.5rem;
 			text-align: center;
 			padding: 1rem;
 			color: #000;
 			text-shadow: 0.1rem 0.1rem 0.3rem #fff;
-		}
-
-		.imgs-cover {
+		  }
+		  
+		  .imgs-cover {
 			max-width: 20rem;
 			height: auto;
 			margin-left: 26rem;
-		}
-
-		footer {
+		  }
+		  
+		  footer {
 			display: flex;
 			justify-content: center;
 			font-family: 'Montserrat', sans-serif;
 			color: #fff;
 			height: 5vh;
-		}
-
-		.footer-text {
-			margin-top: 141rem;
+		  }
+		  
+		  .footer-text {
+			margin-top: 148rem;
 			height: 5rem;
-		}
-
-		nav {
+		  }
+		  
+		  nav {
 			font-size: clamp(1.3rem, 2vw, 1.8rem);
-			margin: 0 0.5rem 0 0;
+			margin: 0 0.5rem 11rem 0;
 			display: flex;
 			align-items: center;
 			justify-content: right;
-		}
-
-		nav {
-			display: flex;
-			justify-content: flex-end;
-
-		}
-
-		nav a {
+		  }
+		  
+		  nav a {
 			margin: 1rem 0.5rem;
 			font-size: clamp(1.3rem, 2vw, 1.8rem);
 			color: #fff;
 			text-decoration: none;
-		}
-
-		nav a:hover {
+		  }
+		  
+		  nav a:hover {
 			text-decoration: underline;
 			font-weight: bolder;
-		}
-
-		#menu a {
-			margin: 1rem 0.5rem;
+		  }
+		  
+		  #menu a {
 			font-size: clamp(1.3rem, 2vw, 1.8rem);
 			color: #fff;
 			text-decoration: none;
-		}
-
-		#menu a:hover {
+		  }
+		  
+		  #menu a:hover {
 			text-decoration: underline;
 			font-weight: bolder;
-		}
-
-		#mostrarMenu,
-		#ocultarMenu {
+		  }
+		  
+		  #mostrarMenu,
+		  #ocultarMenu {
 			border: none;
 			background: none;
 			color: #fff;
@@ -251,48 +219,50 @@
 			padding: 0px 5px;
 			cursor: pointer;
 			display: none;
-		}
-
-		@media only screen and (max-width: 717px) {
-
+		  }
+		  
+		  @media only screen and (max-width: 717px) {
 			#mostrarMenu,
 			#ocultarMenu {
-				display: block;
+			  display: block;
 			}
-
+		  
 			#mostrarMenu {
-				margin-left: auto;
+			  margin-left: auto;
 			}
-
+		  
 			#ocultarMenu {
-				position: fixed;
-				right: 13px;
-				top: 13px;
+			  position: fixed;
+			  right: 13px;
+			  top: 13px;
 			}
-
+		  
 			#menu {
-				position: fixed;
-				flex-direction: column;
-				width: 100vw;
-				height: 100vh;
-				background-color: rgba(98, 22, 67, 0.5);
-				border-radius: 50% 0 50% 50%;
-				align-items: center;
-				justify-content: center;
-				margin: 0;
-				display: none;
-				opacity: 0;
-				transition: 0.3s;
+			  position: fixed;
+			  flex-direction: column;
+			  width: 100vw;
+			  height: 100vh;
+			  background-color: rgba(98, 22, 67, 0.5);
+			  border-radius: 50% 0 50% 50%;
+			  align-items: center;
+			  justify-content: center;
+			  margin: 0;
+			  display: none;
+			  opacity: 0;
+			  transition: 0.3s;
 			}
+		  
 			.discografia {
-				display: grid;
-				grid-template-columns: repeat(1, auto);
-				gap: 10px;
+			  display: grid;
+			  grid-template-columns: repeat(1, auto);
+			  gap: 10px;
 			}
+		  
 			nav {
-				display: none;
+			  display: none;
 			}
-		}
+		  }
+		  
 	</style>
 </head>
 
