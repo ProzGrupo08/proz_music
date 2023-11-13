@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="./assets/scripts/discografia.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<script src="./assets/scripts/script.js" defer></script>
 	<title>Proz Music - Discografia</title>
 	<style>
 		@charset "UTF-8";
@@ -201,45 +202,47 @@
 			margin-top: 141rem;
 			height: 5rem;
 		}
-		nav{    
+
+		nav {
 			font-size: clamp(1.3rem, 2vw, 1.8rem);
 			margin: 0 0.5rem 0 0;
-			display:  flex;
-			align-items:  center;
-			justify-content: right;  
-	}
-	
-		nav {	    
-			display: flex;		
-			justify-content: flex-end;
-				
-		}  
+			display: flex;
+			align-items: center;
+			justify-content: right;
+		}
 
-		nav a{
+		nav {
+			display: flex;
+			justify-content: flex-end;
+
+		}
+
+		nav a {
 			margin: 1rem 0.5rem;
 			font-size: clamp(1.3rem, 2vw, 1.8rem);
 			color: #fff;
-			text-decoration: none;    
-		}    
-	
-		nav a:hover{
+			text-decoration: none;
+		}
+
+		nav a:hover {
 			text-decoration: underline;
 			font-weight: bolder;
 		}
 
-		#menu a{
+		#menu a {
 			margin: 1rem 0.5rem;
 			font-size: clamp(1.3rem, 2vw, 1.8rem);
 			color: #fff;
-			text-decoration: none;    
-		}    
-	
-		#menu a:hover{
+			text-decoration: none;
+		}
+
+		#menu a:hover {
 			text-decoration: underline;
 			font-weight: bolder;
-		}	
+		}
 
-		#mostrarMenu, #ocultarMenu{
+		#mostrarMenu,
+		#ocultarMenu {
 			border: none;
 			background: none;
 			color: #fff;
@@ -247,25 +250,27 @@
 			font-weight: bold;
 			padding: 0px 5px;
 			cursor: pointer;
-			display: none;		
-		}	
+			display: none;
+		}
 
-		@media only screen and (max-width: 717px){
-			#mostrarMenu, #ocultarMenu{
+		@media only screen and (max-width: 717px) {
+
+			#mostrarMenu,
+			#ocultarMenu {
 				display: block;
 			}
-			
-			#mostrarMenu{
+
+			#mostrarMenu {
 				margin-left: auto;
 			}
-			
-			#ocultarMenu{
+
+			#ocultarMenu {
 				position: fixed;
 				right: 13px;
 				top: 13px;
 			}
-			
-			#menu{
+
+			#menu {
 				position: fixed;
 				flex-direction: column;
 				width: 100vw;
@@ -277,7 +282,7 @@
 				margin: 0;
 				display: none;
 				opacity: 0;
-				transition: 0.3s;			
+				transition: 0.3s;
 			}
 		}
 	</style>
@@ -285,17 +290,18 @@
 
 <body class="gradiente">
 	<header>
-		<a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
-	 	<button id="mostrarMenu">&#9776;</button>
-		
+		<a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site"
+				alt="Logomarca do site" class="logo"></a>
+		<button id="mostrarMenu">&#9776;</button>
+
 		<nav id="menu">
 			<button id="ocultarMenu">X</button>
 			<a href="./index.html">Home</a>
 			<a href="./biografia.html">Biografia</a>
 			<a href="./letras.html">Letras</a>
 			<a href="./contato.html">Contato</a></li>
-		</nav>	             
-	  </header>
+		</nav>
+	</header>
 	<div class="container">
 		<main>
 			<div class="discografia" id="resultados">
