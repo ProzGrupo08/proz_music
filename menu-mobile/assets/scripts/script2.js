@@ -82,7 +82,10 @@ function limparCampos() {
     $("#artista").val('');
     $("#musica").val('');
     $('#resultado').html(''); // Limpa o resultado da pesquisa
-    $('#video-player').html(''); // Limpa o vídeo relacionado
+    $('#youtube-iframe').attr('src', '');
+    if (player) {
+        player.stopVideo();
+    }
 }
 
 // Associar a função de busca ao clique no botão
