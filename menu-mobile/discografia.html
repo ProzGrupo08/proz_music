@@ -2,275 +2,314 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./assets/scripts/discografia.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Proz Music - Discografia</title>
-    <style>
-        @charset "UTF-8";
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="./assets/scripts/discografia.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	<title>Proz Music - Discografia</title>
+	<style>
+		@charset "UTF-8";
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
-        html {
-            font-size: 62.5%;
-            height: 90%;
-        }
+		html {
+			font-size: 62.5%;
+			height: 90%;
+		}
 
-        body {
-            font-family: "Montserrat";
-            font-size: clamp(1.3rem, 2vw, 2.6rem);
-            color: #fff;
-            margin: auto;
-        }
+		body {
+			font-family: "Montserrat";
+			font-size: clamp(1.3rem, 2vw, 2.6rem);
+			color: #fff;
+			margin: auto;
+		}
 
-        body.gradiente {
-            display: block;
-            align-items: center;
-            justify-content: center;
-            width: 98vw;
-            background: linear-gradient(45deg, #621643, #b054c2);
-            background-size: 300% 300%;
-            animation: gradient-animation 13s ease infinite;
-        }
+		body.gradiente {
+			display: block;
+			align-items: center;
+			justify-content: center;
+			width: 98vw;
+			background: linear-gradient(45deg, #621643, #b054c2);
+			background-size: 300% 300%;
+			animation: gradient-animation 13s ease infinite;
+		}
 
-        @keyframes gradient-animation {
-            0% {
-                background-position: 0% 50%;
-            }
+		@keyframes gradient-animation {
+			0% {
+				background-position: 0% 50%;
+			}
 
-            50% {
-                background-position: 100% 50%;
-            }
+			50% {
+				background-position: 100% 50%;
+			}
 
-            100% {
-                background-position: 0% 50%;
-            }
-        }
+			100% {
+				background-position: 0% 50%;
+			}
+		}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
+		header {
+			display: flex;
+			justify-content: space-between;
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;
 
-        }
+		}
 
-        header>a>img {
-            height: 13rem;
-        }
+		header>a>img {
+			height: 13rem;
+		}
 
-        section {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            justify-items: center;
-        }
+		section {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			justify-items: center;
+		}
 
-        main {
-            display: grid;
-            grid-template-columns: repeat(3, auto);
-            justify-items: center;
-            align-items: center;
-            height: 71vh;
-            width: 90vw;
-            color: #000;
-            flex: 1;
-            margin: auto;
-        }
+		main {
+			display: grid;
+			grid-template-columns: repeat(3, auto);
+			justify-items: center;
+			align-items: center;
+			height: 50vh;
+			width: 90vw;
+			color: #000;
+			flex: 1;
+			margin: auto;
+		}
 
-        .texto {
-            display: grid;
-            grid-template-rows: repeat(1, auto);
-            grid-template-columns: 60% 40%;
-            justify-content: space-around;
-            align-items: center;
-            float: left;
-            height: 68vh;
-            color: #fff;
-            background-color: transparent;
-            margin: 0.5rem;
-            padding: 0.5rem;
-            border-radius: 2rem;
-            line-height: 1.5;
-            text-align: left;
-            font-size: 2.6rem;
-            font-family: 'Montserrat', sans-serif;
-        }
+		.logo {
+			float: left;
+			grid-column: 1;
+			grid-row: 1;
+			margin: 0.5rem 0.5rem;
+			height: 19vh;
+		}
 
-        #asterisco {
-            float: right;
-            font-size: 5.8rem;
-            color: #D1328E;
-            text-shadow: 1px 1px 2px #fff;
-        }
+		.discos {
+			height: 85%;
+			background-color: goldenrod;
+			align-items: center;
+			color: #000;
+			padding: 0.8rem 0.8rem 5rem;
+			border-radius: 2rem;
+			box-shadow: 0 0 0.3rem 0.3rem rgb(99, 98, 98);
+		}
 
-        .texto>h2 {
-            width: 26rem;
-        }
+		.discos img {
+			width: 100%;
+			height: 180px;
+			object-fit: cover;
+			padding: 1rem;
+			border-radius: 2rem;
+		}
 
-        .texto>p {
-            font-size: 1.7rem;
-        }
+		h1#d_titulo {
+			font-size: 2.5rem;
+			text-align: center;
+			padding: 1rem;
+			color: #000;
+			text-shadow: 0.1rem 0.1rem 0.3rem #fff;
+		}
 
-        #inicial {
-            float: right;
-            margin-top: 0.5rem;
-            border: none;
-        }
+		nav {
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			margin: 0 0.5rem 0 0;
+			display: flex;
+			align-items: center;
+			justify-content: right;
+		}
 
-        .logo {
-            float: left;
-            grid-column: 1;
-            grid-row: 1;
-            margin: 0.5rem 0.5rem;
-            height: 19vh;
-        }
+		nav ul li {
+			display: inline-block;
 
-        .discos {
-            height: 85%;
-            background-color: goldenrod;
-            align-items: center;
-            color: #000;
-            padding: 0.8rem 0.8rem 5rem;
-            border-radius: 2rem;
-            box-shadow: 0 0 0.3rem 0.3rem rgb(99, 98, 98);
-        }
+		}
 
-        .discos img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            padding: 1rem;
-            border-radius: 2rem;
-        }
+		nav li a {
+			color: #fff;
+			text-decoration: none;
+		}
 
-        h1#d_titulo {
-            font-size: 2.5rem;
-            text-align: center;
-            padding: 1rem;
-            color: #000;
-            text-shadow: 0.1rem 0.1rem 0.3rem #fff;
-        }
+		nav li a:hover {
+			text-decoration: underline;
+			font-weight: bolder;
+		}
 
-        nav {
-            font-size: clamp(1.3rem, 2vw, 1.8rem);
-            margin: 0 0.5rem 0 0;
-            display: flex;
-            align-items: center;
-            justify-content: right;
-        }
-
-        nav ul li {
-            display: inline-block;
-
-        }
-
-        nav li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        nav li a:hover {
-            text-decoration: underline;
-            font-weight: bolder;
-        }
-
-        .both {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: -60rem;
-            margin-left: 5rem;
-        }
+		.both {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: -60rem;
+			margin-left: 5rem;
+		}
 
 
-        input[type=text] {
-            width: 13rem;
-            box-sizing: border-box;
-            border: 0.2rem solid #000;
-            border-radius: 2rem;
-            font-size: clamp(1rem, 1.3vw, 1.6rem);
-            background-color: white;
-            background-image: url('https://www.w3schools.com/howto/searchicon.png');
-            background-position: 1rem 1rem;
-            background-repeat: no-repeat;
-            padding: 1.2rem 2rem 1.2rem 4rem;
-            -webkit-transition: width 0.4s ease-in-out;
-            transition: width 0.4s ease-in-out;
-            margin-left: 1.3rem;
-        }
+		input[type=text] {
+			width: 13rem;
+			box-sizing: border-box;
+			border: 0.2rem solid #000;
+			border-radius: 2rem;
+			font-size: clamp(1rem, 1.3vw, 1.6rem);
+			background-color: white;
+			background-image: url('https://www.w3schools.com/howto/searchicon.png');
+			background-position: 1rem 1rem;
+			background-repeat: no-repeat;
+			padding: 1.2rem 2rem 1.2rem 4rem;
+			-webkit-transition: width 0.4s ease-in-out;
+			transition: width 0.4s ease-in-out;
+			margin-left: 1.3rem;
+			position: relative;
+			top: 19rem;
+		}
 
-        .discografia{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
+		.discografia {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 10px;
+			margin-top: 7rem;
+		}
 
-        input[type=text]:focus {
-            margin-left: 0.5rem;
-            width: 71vw
-        }
+		input[type=text]:focus {
+			margin-left: 0.5rem;
+			width: 71vw
+		}
 
-        h1#d_titulo {
-            font-size: 2.5rem;
-            text-align: center;
-            padding: 1rem;
-            color: #000;
-            text-shadow: 0.1rem 0.1rem 0.3rem #fff;
-        }
+		h1#d_titulo {
+			font-size: 2.5rem;
+			text-align: center;
+			padding: 1rem;
+			color: #000;
+			text-shadow: 0.1rem 0.1rem 0.3rem #fff;
+		}
 
-        .imgs-cover{
-            max-width: 20rem;
-            height: auto;
-            margin-left: 26rem;
-        }
+		.imgs-cover {
+			max-width: 20rem;
+			height: auto;
+			margin-left: 26rem;
+		}
 
-        footer {
-            display: flex;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
-            height: 5vh;
-        }
+		footer {
+			display: flex;
+			justify-content: center;
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;
+			height: 5vh;
+		}
 
-        .footer-text {
-            margin-top: 141rem;
-            height: 5rem;
-        }
-    </style>
+		.footer-text {
+			margin-top: 141rem;
+			height: 5rem;
+		}
+		nav{    
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			margin: 0 0.5rem 0 0;
+			display:  flex;
+			align-items:  center;
+			justify-content: right;  
+	}
+	
+		nav {	    
+			display: flex;		
+			justify-content: flex-end;
+				
+		}  
+
+		nav a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		nav a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}
+
+		#menu a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		#menu a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}	
+
+		#mostrarMenu, #ocultarMenu{
+			border: none;
+			background: none;
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+			padding: 0px 5px;
+			cursor: pointer;
+			display: none;		
+		}	
+
+		@media only screen and (max-width: 717px){
+			#mostrarMenu, #ocultarMenu{
+				display: block;
+			}
+			
+			#mostrarMenu{
+				margin-left: auto;
+			}
+			
+			#ocultarMenu{
+				position: fixed;
+				right: 13px;
+				top: 13px;
+			}
+			
+			#menu{
+				position: fixed;
+				flex-direction: column;
+				width: 100vw;
+				height: 100vh;
+				background-color: rgba(98, 22, 67, 0.5);
+				border-radius: 50% 0 50% 50%;
+				align-items: center;
+				justify-content: center;
+				margin: 0;
+				display: none;
+				opacity: 0;
+				transition: 0.3s;			
+			}
+		}
+	</style>
 </head>
 
 <body class="gradiente">
-    <header>
-        <a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site"
-                alt="Logomarca do site" class="logo"></a>
-        <nav>
-            <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./biografia.html">Biografia</a></li>
-                <li><a href="./letras.html">Letras</a></li>
-                <li><a href="./discografia.html">Discografia</a></li>
-                <li><a href="./contato.html">Contato</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
-    <div class="container">
-        <main>
-            <div class="discografia" id="resultados">
-            </div>
-        </main>
-        <div class="both">
-            <input id="query" type="text" name="busca" placeholder="Buscar...">
-        </div>
-        <footer>
-            <nav>
-                <ul class="footer-text">
-                    <li><a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a
-                            href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>
-                </ul>
-            </nav>
-        </footer>
+	<header>
+		<a href="./index.html"><img src="./assets/imgs/proz-music_07.svg" title="Logomarca do site" alt="Logomarca do site" class="logo"></a>
+	 	<button id="mostrarMenu">&#9776;</button>
+		
+		<nav id="menu">
+			<button id="ocultarMenu">X</button>
+			<a href="./index.html">Home</a>
+			<a href="./biografia.html">Biografia</a>
+			<a href="./letras.html">Letras</a>
+			<a href="./contato.html">Contato</a></li>
+		</nav>	             
+	  </header>
+	<div class="container">
+		<main>
+			<div class="discografia" id="resultados">
+			</div>
+		</main>
+		<div class="both">
+			<input id="query" type="text" name="busca" placeholder="Buscar...">
+		</div>
+		<footer>
+			<nav>
+				<ul class="footer-text">
+					<li><a href="https://www.instagram.com/prozeducacaobr/" target="_blank">@Prozeducação</a> | <a
+							href="https://www.prozeducacao.com.br/" target="_blank">www.prozeducacao.com.br</a></li>
+				</ul>
+			</nav>
+		</footer>
 </body>

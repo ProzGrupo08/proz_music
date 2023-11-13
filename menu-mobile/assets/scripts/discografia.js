@@ -45,4 +45,9 @@ query.addEventListener('keypress',(e)=>{
     e.preventDefault();
     searchTracks(query.value);
   }
-})
+});
+
+function toggleMenu() {
+  const mobileNav = document.querySelector('.mobile-nav');
+  mobileNav.style.display = (mobileNav.style.display === 'block') ? 'none' : 'block';
+}
