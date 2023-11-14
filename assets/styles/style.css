@@ -1,96 +1,163 @@
-@charset "UTF-8";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+		/* Quando se utiliza o grid-auto-rows ou grid-auto-columns, NÃO se pode trabalhar com números negativos */
+	
+		@charset "UTF-8";
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+	
+	
+		html {
+			font-size: 62.5%;
+			height: 90%;
+			
+		}
+	
+		body{    
+			font-family: "Montserrat";
+			font-size: clamp(1.3rem, 2vw, 2.6rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			color: #fff;
+			margin: auto;
+		}
+	
+		body.gradiente {    
+			display: block;
+			align-items: center;
+			justify-content: center;    
+			width: 98vw;  
+			background: linear-gradient(45deg,#b054c2,#621643);
+			background-size: 300% 300%;
+			animation: gradient-animation 8s ease infinite;
+		}
+				
+		@keyframes gradient-animation {
+			0% {
+			background-position: 0% 50%;
+			}
+			50% {
+			background-position: 100% 50%;
+			}
+			100% {
+			background-position: 0% 50%;
+			}
+		}
+	
+		.container>* {
+			/* min-height: 10rem;
+			border-radius: 0.4rem; */		
+			display: flex; /* Preciso alterar o display nas media-queries*/
+			align-items: center;			
+		}
+	
+		.container {
+			display: grid;
+			grid-template-rows: repeat(7, auto);
+			grid-template-columns: repeat(2, auto);
+			gap: 1rem;
+			height: 75vh;
+		}
+	
+		header {		
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: flex-start;
+			font-family: 'Montserrat', sans-serif;
+			color: #fff;		
+		}
+	
+		header > a > img{
+			height: 19vh; /*Utilizar como unidade de medida o (vh) para height ou (vw) para o width. Como uma se ajusta automaticamente a outra, definir APENAS UMA delas. Isso evita distorcer a imagem.*/
+			object-fit: cover; /*Lembrar de utilizar as especificações OBJECT-FIT e OBJECT-POSITION em todas as imagens*/
+  			object-position: left top;
+		}
+	
+	
+		footer{
+			height: 2vh;     		
+				
+		}
+		
+		#mostrarMenu, #ocultarMenu{
+			border: none;
+			background: none;
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+			padding: 0px 5px;
+			cursor: pointer;
+			display: none;		
+		}	
+	
+		nav{    
+			font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+			margin: 0 0.5rem 0 0; /*Atentar em especificar a margem lateral, para não colar no canto da tela*/
+			display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
+			align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
+			justify-content: right; /* Alinha os elementos filhos ao centro horizontalmente */  
+	}
+	
+		nav {	    
+			display: flex;		
+			justify-content: flex-end;
+				
+		}    
+	
+		nav a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		nav a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}
+		
+		#menu a{
+			margin: 1rem 0.5rem;
+			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			color: #fff;
+			text-decoration: none;    
+		}    
+	
+		#menu a:hover{
+			text-decoration: underline;
+			font-weight: bolder;
+		}	
+		
 
-*{    
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body{
-	font-size: 62.5%;	
-	height: 100%;
-	width: 100%; 	
-}
-
-body.gradiente {    
-    display: block;
-    align-items: center;
-    justify-content: center;    
-    width: 98vw;  
-    background: linear-gradient(45deg,#621643,#b054c2);
-    background-size: 300% 300%;
-    animation: gradient-animation 13s ease infinite;
-  }
-  
-  @keyframes gradient-animation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-header{
-    display: flex;
-    justify-content: space-between;  
-    font-family: 'Montserrat', sans-serif;
-    color: #fff;
-              
-    }
-
-header > a > img{
-    height: 13rem;
-}
+        /*Início da modificação da scrollbar (barra de rolagem)*/
+		/*Firefox*/
+		*{
+			scrollbar-width: 12px;
+			scrollbar-color: #b054c2 #621643 /*A primeira cor é do botão e a segunda do fundo*/		
+		}
+		
+		/*Chrome, Edge e Safari*/
+		::-webkit-scrollbar{
+			width: 1.2rem;
+		}
+		
+		::-webkit-scrollbar-track{
+			background: #621643;
+			border-radius: 1.3rem;
+		}
+		
+		::-webkit-scrollbar-thumb{
+			background-color: #b054c2;
+			border-radius: 1.3rem;
+			o
+		}   
+		/*Fim da modificação da scrollbar (barra de rolagem)*/
+			
 
 
-footer{
-    height: 5vh;             
-          
-}
-
-section{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-main{    
-	display:flex;
-    justify-content: center;
-    height: 71vh;     
-    color: #000;
-    flex: 1;
-}
-
-.texto{
-	display: flex;
-    justify-content: space-evenly;
-    float: left;
-    height: 68vh;
-    width: 90vw;
-    color: #fff;    
-    background-color: transparent; /* Background fictício. No exemplo do Canva está transparente.*/
-    margin: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 2rem;
-    line-height:1.5;
-	text-align: justify;
-    font-size: 2.6rem;
-    font-family: 'Montserrat', sans-serif;
-}
-
+		
 #inicial{ /*Colocado apenas para exemplo visual.*/
     float: right;
-    height: 35rem; /*Altura fictícia.*/
-    width: 53rem; /*Largura fictícia.*/
+    /* width: 50vw; */ /*Largura fictícia.*/
     margin-top: 0.5rem;    
     border: none;
- 
+    
 }
 
 .logo{    /*Colocado apenas para exemplo visual.*/
@@ -98,33 +165,40 @@ main{
     margin: 0.2rem 0.5rem;    
 }
 
-nav{    
-    font-size: 1.8rem;
-    margin: 0;      
-    display:  flex;  /* Coloca os elementos-filhos um ao lado do outro */
-    align-items:  center;  /* Alinha os elementos filhos ao centro verticalmente */
-    justify-content: center; /* Alinha os elementos filhos ao centro horizontalmente */  
-}
-
-nav ul li{	    
-    display: inline-block;
+nav {	    
+    display: flex;		
+    justify-content: flex-end;
         
 }    
 
-nav li a{
+nav a{
+    margin: 1rem 0.5rem;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
     color: #fff;
     text-decoration: none;    
 }    
 
-nav li a:hover{
+nav a:hover{
     text-decoration: underline;
     font-weight: bolder;
 }
 
+#menu a{
+    margin: 1rem 0.5rem;
+    font-size: clamp(1.3rem, 2vw, 1.8rem);
+    color: #fff;
+    text-decoration: none;    
+}    
+
+#menu a:hover{
+    text-decoration: underline;
+    font-weight: bolder;
+}	
+
 .both {
     display: flex;
     position: absolute;
-    top: 86vh;
+    top: 85vh;
 }
 
 
@@ -133,7 +207,7 @@ input[type=text] {
     box-sizing: border-box;
     border: 0.2rem solid #000;
     border-radius: 2rem;
-    font-size: 1.6rem;
+    font-size: clamp(1.3rem, 2vw, 1.8rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
     background-color: white;
     background-image: url('https://www.w3schools.com/howto/searchicon.png');
     background-position: 1rem 1rem; 
@@ -146,42 +220,7 @@ input[type=text] {
 
 input[type=text]:focus {
     margin-left: 0.5rem;
-    width: 71vw
-}
-
-.discografia {    
-    margin: auto;
-    max-width: 75vw;
-    height: 81vh;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 13px;
-    justify-content: center;
-    padding: 13px;
-    box-shadow: 0 0 0.3rem 0.3rem rgb(0, 0, 0);
-    border-radius: 2rem;     
-    text-align: center;  
-
-}
-
-.discos { 
-    height: 85%;        
-    background-color: goldenrod;               
-    align-items: center;
-    color: #000;
-    padding: 0.8rem 0.8rem 5rem;
-    border-radius: 2rem; 
-    box-shadow: 0 0 0.3rem 0.3rem rgb(99, 98, 98); 
-    
-     
-}
-
-.discos img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;  
-    padding: 1rem;
-    border-radius: 2rem;
+    width: 35vw
 }
 
 h1#d_titulo{    
@@ -192,9 +231,80 @@ h1#d_titulo{
     text-shadow: 0.1rem 0.1rem 0.3rem #fff;    
 }
 
-footer{    
-	display: flex;
-    justify-content: end;
+	footer {
+		grid-column: 1/-1;
+		grid-row: -2/-1;	
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: space-between;		
+		font-family: 'Montserrat', sans-serif;
+		color: #fff;		
+	}
+body {
     font-family: 'Montserrat', sans-serif;
-    color: #fff;
+    text-align: center;
+    margin: 2rem;
 }
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-right: 2rem;
+    color: #fff;
+    
+}
+
+button {
+    padding: 1rem 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+	background-color: #621643;	
+	color: #fff;
+	box-shadow: 0.1rem 0.1rem 0.3rem #fff;	
+    border: none;
+    border-radius: 1.3rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #b054c2;
+}
+#resultado {
+    font-size: clamp(1.3rem, 2vw, 2.1rem); /*O clamp() no font-size recebe 3 valores. O primeiro é MIN, o segundo é o PREFERIDO e o terceiro é o MAX.*/
+    color: #fff;
+    margin-top: 2rem;
+    height: 30rem; /* Altura máxima da caixa de texto */
+    overflow-y: auto; /* Adicionar barra de rolagem vertical quando necessário */
+}
+
+		
+		@media only screen and (max-width: 717px){
+				#mostrarMenu, #ocultarMenu{
+					display: block;
+				}
+				
+				#mostrarMenu{
+					margin-left: auto;
+				}
+				
+				#ocultarMenu{
+					position: fixed;
+					right: 13px;
+					top: 13px;
+				}
+				
+				#menu{
+					position: fixed;
+					flex-direction: column;
+					width: 100vw;
+					height: 100vh;
+					background-color: rgba(98, 22, 67, 0.5);
+					border-radius: 50% 0 50% 50%;
+					align-items: center;
+					justify-content: center;
+					margin: 0;
+					display: none;
+					opacity: 0;
+					transition: 0.3s;			
+				}
+			}	
