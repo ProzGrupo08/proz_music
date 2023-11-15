@@ -1,4 +1,5 @@
 const musica = document.getElementById("nome-musica");
+var mensagemBiografia = document.getElementById("mensagem-biografia");
 
 document.getElementById("input-buscar").addEventListener("keydown", function(event) {
   // Verifique se a tecla pressionada é a tecla "Enter" (código 13)
@@ -15,9 +16,10 @@ function processa() {
   
 
   if (!inputBusca) {
-    alert("Por favor, digite o nome do autor e da música.");
+    mensagemBiografia.innerHTML = " <br> <br> Por favor, digite o nome do autor e da música... <br> <br>";
     return;
   }
+
 
   // Lista de palavras comuns que devem permanecer em minúscula
   const palavrasMinusc = ["a", "an", "the", "in", "on", "of", "and", "for", "with", "to", "by","de"];
@@ -66,7 +68,7 @@ function processa() {
   function realizarPesquisa(formasDeBusca, index) {
     if (index >= formasDeBusca.length) {
       // Todas as tentativas de pesquisa foram feitas e nenhum resultado válido foi encontrado
-      alert("Não foi possível encontrar informações sobre à Música/Autor");
+      mensagemBiografia.innerHTML = "Não foi possível encontrar informações sobre à Música/Autor";
       return;
     }
 
