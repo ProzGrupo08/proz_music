@@ -85,6 +85,7 @@ function processa() {
           // Exibe o resultado se for encontrado
           resultText.innerHTML = extract;
           obterImagemWikipedia(formaAtual,labelMusic);
+          mensagemBiografia.innerHTML = ""; 
         } else {
           // Se nenhum resultado for encontrado, tente a próxima forma de busca
           realizarPesquisa(formasDeBusca, index + 1);
