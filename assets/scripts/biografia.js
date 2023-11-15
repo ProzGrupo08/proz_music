@@ -68,7 +68,7 @@ function processa() {
   function realizarPesquisa(formasDeBusca, index) {
     if (index >= formasDeBusca.length) {
       // Todas as tentativas de pesquisa foram feitas e nenhum resultado válido foi encontrado
-      mensagemBiografia.innerHTML = "Não foi possível encontrar informações sobre à Música/Autor";
+      mensagemBiografia.innerHTML = " <br> <br> Não foi possível encontrar informações sobre à Música/Autor <br> <br>";
       return;
     }
 
